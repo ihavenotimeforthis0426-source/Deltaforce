@@ -1,15 +1,16 @@
-name: Auto Scrape Delta Force Market & Predict
+name: Run Scraper
 
 on:
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  scrape-and-update:
+  scrape:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -26,11 +27,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4 pandas
 
-      - name: Run Scraper & AI Prediction
+      - name: Run Scraper
         run: python scraper.py
 
       - name: Auto Commit and Push Data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto update market data [skip ci]"
+          commit_message: "Auto update data [skip ci]"
           file_pattern: "data.json"
