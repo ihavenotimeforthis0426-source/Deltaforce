@@ -1,95 +1,102 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>三角洲行動 Garena台服交易所看板 V6</title>
-    <style>
-        body { font-family: sans-serif; background-color: #121212; color: #fff; padding: 15px; margin: 0; }
-        h1 { color: #4caf50; font-size: 1.5rem; text-align: center; margin: 10px 0 5px; }
-        .sub-title { text-align: center; font-size: 0.8rem; color: #888; margin-bottom: 10px; }
-        .status { text-align: center; color: #4caf50; font-size: 0.85rem; margin-bottom: 15px; }
-        .categories { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 15px; }
-        .cat-btn { background: #2a2a2a; color: #ccc; border: none; padding: 8px 16px; border-radius: 20px; white-space: nowrap; cursor: pointer; }
-        .cat-btn.active { background: #4caf50; color: #fff; font-weight: bold; }
-        .item-card { background: #1e1e1e; border-radius: 8px; padding: 12px; margin-bottom: 10px; border-left: 4px solid #ffb74d; }
-        .item-header { display: flex; justify-content: space-between; align-items: center; }
-        .item-title { font-weight: bold; font-size: 1.1rem; }
-        .item-price { color: #ffeb3b; font-size: 1.2rem; font-weight: bold; text-align: right; }
-        .ai-tag { display: inline-block; background: #0288d1; color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; margin-top: 5px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三角洲行動 交易所即時看板</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 15px; }
+    .header { text-align: center; margin-bottom: 15px; }
+    .header h1 { font-size: 20px; color: #4caf50; margin-bottom: 5px; }
+    .status { font-size: 12px; color: #888; margin-top: 5px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-top: 15px; }
+    .card { background: #1e1e1e; border-radius: 8px; padding: 15px; border: 1px solid #333; }
+    .card-title { font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 8px; display: flex; justify-content: space-between; }
+    .category { font-size: 11px; background: #333; color: #aaa; padding: 2px 6px; border-radius: 4px; }
+    .price-box { margin: 10px 0; font-size: 14px; }
+    .price-num { font-size: 18px; font-weight: bold; color: #ff9800; }
+    .prediction { font-size: 13px; color: #4caf50; margin-top: 4px; }
+    .tag { display: inline-block; padding: 3px 8px; font-size: 12px; border-radius: 4px; font-weight: bold; margin-top: 8px; }
+    .tag-up { background: #2e7d32; color: #fff; }
+    .tag-down { background: #c62828; color: #fff; }
+    .tag-stable { background: #1565c0; color: #fff; }
+  </style>
 </head>
 <body>
-    <h1>📊 三角洲行動 Garena台服交易所看板 V6</h1>
-    <div class="sub-title">(ED YL Josh)</div>
-    <div class="status">🟢 已全自動同步 Delta Force Tools 最新價格與 AI 預測</div>
 
-    <div class="categories" id="catGroup">
-        <button class="cat-btn active" onclick="filterCat('ALL')">全部物品</button>
-    </div>
+  <div class="header">
+    <h1>三角洲行動 交易所即時看板</h1>
+    <div class="status" id="status">正在載入市場資料...</div>
+  </div>
 
-    <div id="itemList">載入中...</div>
+  <div class="grid" id="market-list"></div>
 
-    <script>
-        let allData = [];
+  <script>
+    async function loadData() {
+      const statusEl = document.getElementById('status');
+      const listEl = document.getElementById('market-list');
 
-        async function loadData() {
-            try {
-                const res = await fetch('./data.json?t=' + new Date().getTime());
-                allData = await res.json();
-                renderCategories();
-                renderItems(allData);
-            } catch (e) {
-                document.getElementById('itemList').innerHTML = '<div style="text-align:center;color:#888;">數據載入失敗，請確認 data.json 格式</div>';
-            }
+      try {
+        // 加入時間戳記避免瀏覽器快取舊資料
+        const response = await fetch('./data.json?t=' + new Date().getTime());
+        if (!response.ok) throw new Error('無法讀取 data.json');
+        
+        let data = await response.json();
+        
+        // 如果 JSON 是物件格式，嘗試轉成陣列
+        if (!Array.isArray(data)) {
+          if (data.items) data = data.items;
+          else data = Object.values(data);
         }
 
-        function renderCategories() {
-            const cats = ['ALL', ...new Set(allData.map(i => i.category || i.type || '未分類'))];
-            const catGroup = document.getElementById('catGroup');
-            catGroup.innerHTML = cats.map(c => `
-                <button class="cat-btn ${c === 'ALL' ? 'active' : ''}" onclick="filterCat('${c}', this)">
-                    ${c === 'ALL' ? '全部物品' : c}
-                </button>
-            `).join('');
+        if (!data || data.length === 0) {
+          statusEl.innerText = '目前無資料或 data.json 為空';
+          return;
         }
 
-        function filterCat(cat, btn) {
-            if(btn) {
-                document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            }
-            if (cat === 'ALL') {
-                renderItems(allData);
-            } else {
-                const filtered = allData.filter(i => (i.category || i.type || '未分類') === cat);
-                renderItems(filtered);
-            }
-        }
+        statusEl.innerText = '最後更新時間：' + new Date().toLocaleTimeString();
+        listEl.innerHTML = '';
 
-        function renderItems(data) {
-            const list = document.getElementById('itemList');
-            if (!data || data.length === 0) {
-                list.innerHTML = '<div style="text-align:center;color:#888;margin-top:20px;">查無對應物資數據</div>';
-                return;
-            }
-            list.innerHTML = data.map(item => `
-                <div class="item-card">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">${item.name}</div>
-                            <div style="font-size:0.8rem;color:#888;">${item.category || item.type || '通用品'}</div>
-                            <div class="ai-tag">🤖 AI預測: ${item.predict || item.trend || '+0.0%'}</div>
-                        </div>
-                        <div class="item-price">
-                            ${Number(item.price || 0).toLocaleString()} 哈夫幣
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
+        data.forEach(item => {
+          const name = item.name || item.item_name || '未知物資';
+          const category = item.category || '通用';
+          const price = item.price || item.current_price || 0;
+          const predPrice = item.predicted_price || item.target_price || price;
+          const trend = item.trend || 'stable';
+          const rec = item.recommendation || '觀望';
 
-        loadData();
-    </script>
+          let trendClass = 'tag-stable';
+          if (trend === 'up' || rec.includes('買') || rec.includes('持有')) trendClass = 'tag-up';
+          if (trend === 'down' || rec.includes('賣')) trendClass = 'tag-down';
+
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <div class="card-title">
+              <span>${name}</span>
+              <span class="category">${category}</span>
+            </div>
+            <div class="price-box">
+              目前價格：<span class="price-num">$${price.toLocaleString()}</span>
+            </div>
+            <div class="prediction">
+              AI 預測價格：$${predPrice.toLocaleString()}
+            </div>
+            <div>
+              <span class="tag ${trendClass}">${rec}</span>
+            </div>
+          `;
+          listEl.appendChild(card);
+        });
+
+      } catch (err) {
+        console.error(err);
+        statusEl.innerText = '讀取資料失敗，請確認 data.json 格式與路徑';
+      }
+    }
+
+    loadData();
+  </script>
 </body>
 </html>
