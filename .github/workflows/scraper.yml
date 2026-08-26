@@ -28,10 +28,19 @@ jobs:
       - name: Run Scraper
         run: python scraper.py
 
-      - name: Push Data
+      - name: Force Add and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
-          git commit -m "Auto update data [skip ci]" || exit 0
-          git push
+          
+          # 1. 強制加入 data.json（就算被 .gitignore 擋住也會強制加入）
+          git add -f data.json
+          
+          # 2. 檢查是否有檔案變更
+          if git diff --staged --quiet; then
+            echo "沒有任何資料變更，跳過 Commit"
+          else
+            echo "檢測到資料變更，準備 Commit 並 Push"
+            git commit -m "Auto update data [skip ci]"
+            git push
+          fi
