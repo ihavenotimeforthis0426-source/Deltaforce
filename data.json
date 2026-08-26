@@ -1,1 +1,26 @@
-{}
+[
+  {
+    "name": "曼德爾超導體",
+    "category": "電子設備",
+    "price": 1250000,
+    "predicted_price": 1320000,
+    "trend": "up",
+    "recommendation": "建議持有"
+  },
+  {
+    "name": "絕密軍事硬碟",
+    "category": "情報物資",
+    "price": 680000,
+    "predicted_price": 650000,
+    "trend": "down",
+    "recommendation": "建議賣出"
+  },
+  {
+    "name": "高級醫療注射器",
+    "category": "醫療用品",
+    "price": 85000,
+    "predicted_price": 86000,
+    "trend": "stable",
+    "recommendation": "觀望"
+  }
+]{}
