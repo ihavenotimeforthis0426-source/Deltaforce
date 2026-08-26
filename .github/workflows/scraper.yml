@@ -5,6 +5,7 @@ on:
     - cron: '*/30 * * * *'
   workflow_dispatch:
 
+# 1. 關鍵修復：強制給予 Actions 寫入 GitHub 倉庫的權限
 permissions:
   contents: write
 
@@ -12,6 +13,7 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
+      # 2. 關鍵修復：抓取完整的 Git 歷史，避免 fetch 衝突
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
@@ -30,6 +32,7 @@ jobs:
       - name: Run Scraper
         run: python scraper.py
 
+      # 3. 關鍵修復：改用官方 Auto Commit 套件，自動處理拉取與推送
       - name: Auto Commit and Push Data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
