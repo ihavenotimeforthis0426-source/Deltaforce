@@ -3,242 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>三角洲行動 交易所即時看板 V6 - 全自動AI預測版</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>三角洲行動 Garena台服交易所看板 V6</title>
     <style>
-        * { box-sizing: border-box; }
-        body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 12px; }
-        .header { text-align: center; padding: 10px 0 14px; border-bottom: 1px solid #333; }
-        .header h1 { font-size: 20px; margin: 0; color: #4CAF50; }
-        .subtitle { font-size: 14px; color: #888; margin-top: 4px; font-weight: bold; }
-        .status { font-size: 12px; color: #00d2ff; margin-top: 6px; font-weight: bold; }
-        .search-box { width: 100%; padding: 12px; margin: 12px 0 8px; border-radius: 6px; border: 1px solid #444; background: #222; color: white; font-size: 15px; }
-        .categories { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 8px; }
-        .cat-btn { background: #2a2a2a; color: #ccc; border: none; padding: 8px 14px; border-radius: 16px; font-size: 13px; white-space: nowrap; cursor: pointer; }
-        .cat-btn.active { background: #4CAF50; color: white; font-weight: bold; }
-        
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; margin-top: 8px; }
-        .card { background: #1e1e1e; border-radius: 8px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; border-left: 5px solid #4CAF50; cursor: pointer; transition: transform 0.1s, background 0.2s; }
-        .card:hover { background: #2a2a2a; transform: translateY(-2px); }
-        
-        .card.red { border-left-color: #f44336; }
-        .card.gold { border-left-color: #ffc107; }
-        .card.purple { border-left-color: #9c27b0; }
-        .card.blue { border-left-color: #2196f3; }
-        .card.gray { border-left-color: #9e9e9e; }
-        
-        .item-title { font-weight: bold; font-size: 15px; color: #fff; }
-        .item-meta { font-size: 11px; color: #888; margin-top: 4px; }
-        .price-container { text-align: right; }
-        .price { font-size: 15px; font-weight: bold; color: #ffeb3b; }
-        .trend { font-size: 12px; margin-top: 2px; font-weight: bold; }
-        .trend.up { color: #f44336; }
-        .trend.down { color: #4caf50; }
-        .trend.flat { color: #888; }
-
-        .ai-badge { display: inline-block; background: linear-gradient(45deg, #00f2fe, #4facfe); color: #000; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-top: 4px; }
-
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; padding: 16px; }
-        .modal-content { background: #1e1e1e; border-radius: 12px; width: 100%; max-width: 500px; padding: 20px; position: relative; border: 1px solid #444; }
-        .close-btn { position: absolute; top: 12px; right: 16px; font-size: 24px; color: #aaa; cursor: pointer; }
-        .chart-container { margin-top: 16px; position: relative; height: 260px; }
-        
-        .ai-prediction-box { background: #262b36; border: 1px solid #00d2ff; border-radius: 8px; padding: 10px 14px; margin-top: 12px; }
-        .ai-title { font-weight: bold; color: #00d2ff; font-size: 13px; display: flex; align-items: center; gap: 6px; }
-        .ai-result { margin-top: 6px; font-size: 14px; color: #fff; display: flex; justify-content: space-between; }
+        body { font-family: sans-serif; background-color: #121212; color: #fff; padding: 15px; margin: 0; }
+        h1 { color: #4caf50; font-size: 1.5rem; text-align: center; margin: 10px 0 5px; }
+        .sub-title { text-align: center; font-size: 0.8rem; color: #888; margin-bottom: 10px; }
+        .status { text-align: center; color: #4caf50; font-size: 0.85rem; margin-bottom: 15px; }
+        .categories { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 15px; }
+        .cat-btn { background: #2a2a2a; color: #ccc; border: none; padding: 8px 16px; border-radius: 20px; white-space: nowrap; cursor: pointer; }
+        .cat-btn.active { background: #4caf50; color: #fff; font-weight: bold; }
+        .item-card { background: #1e1e1e; border-radius: 8px; padding: 12px; margin-bottom: 10px; border-left: 4px solid #ffb74d; }
+        .item-header { display: flex; justify-content: space-between; align-items: center; }
+        .item-title { font-weight: bold; font-size: 1.1rem; }
+        .item-price { color: #ffeb3b; font-size: 1.2rem; font-weight: bold; text-align: right; }
+        .ai-tag { display: inline-block; background: #0288d1; color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; margin-top: 5px; }
     </style>
 </head>
 <body>
+    <h1>📊 三角洲行動 Garena台服交易所看板 V6</h1>
+    <div class="sub-title">(ED YL Josh)</div>
+    <div class="status">🟢 已全自動同步 Delta Force Tools 最新價格與 AI 預測</div>
 
-    <div class="header">
-        <h1>📊 三角洲行動 Garena台服交易所看板 V6</h1>
-        <div class="subtitle">(ED YL Josh)</div>
-        <div id="conn-status" class="status">🔄 正在自動連線 Delta Force Tools 伺服器...</div>
+    <div class="categories" id="catGroup">
+        <button class="cat-btn active" onclick="filterCat('ALL')">全部物品</button>
     </div>
 
-    <input type="text" id="search-input" class="search-box" placeholder="🔍 搜尋物資名稱..." oninput="filterData()">
-
-    <div class="categories">
-        <button class="cat-btn active" onclick="setCategory('全部', this)">全部物品</button>
-        <button class="cat-btn" onclick="setCategory('GEAR', this)">裝備零件</button>
-        <button class="cat-btn" onclick="setCategory('ATTACHMENTS', this)">槍械配件</button>
-        <button class="cat-btn" onclick="setCategory('COLLECTIBLES', this)">收藏品</button>
-        <button class="cat-btn" onclick="setCategory('KEYCARDS', this)">門卡</button>
-        <button class="cat-btn" onclick="setCategory('CONSUMABLES', this)">消耗品</button>
-    </div>
-
-    <div id="market-list" class="grid-container"></div>
-
-    <div id="chart-modal" class="modal" onclick="closeModal(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="close-btn" onclick="closeModalDirect()">&times;</span>
-            <h2 id="modal-title" style="margin: 0; font-size: 18px; color: #fff;">物品名稱</h2>
-            <div id="modal-subtitle" style="font-size: 12px; color: #aaa; margin-top: 4px;">歷史走勢與 AI 預測數據</div>
-            
-            <div id="ai-box" class="ai-prediction-box">
-                <div class="ai-title">🤖 AI 漲幅預測算法分析</div>
-                <div class="ai-result">
-                    <span>預測下次價格：<strong id="ai-pred-price" style="color:#ffc107;">--</strong></span>
-                    <span>預估漲跌：<strong id="ai-pred-rate">--</strong></span>
-                </div>
-            </div>
-
-            <div class="chart-container">
-                <canvas id="priceChart"></canvas>
-            </div>
-        </div>
-    </div>
+    <div id="itemList">載入中...</div>
 
     <script>
-        let rawDatabase = {};
-        let currentCategory = "全部";
-        let myChart = null;
+        let allData = [];
 
-        async function initData() {
+        async function loadData() {
             try {
-                // 自動抓取後端 Python 爬蟲產出的 data.json
                 const res = await fetch('./data.json?t=' + new Date().getTime());
-                rawDatabase = await res.json();
-                document.getElementById('conn-status').innerText = "🟢 已全自動同步 Delta Force Tools 最新價格與 AI 預測";
-                filterData();
-            } catch (err) {
-                document.getElementById('conn-status').innerText = "⚠️ 正在等待第一次自動爬蟲部署數據...";
+                allData = await res.json();
+                renderCategories();
+                renderItems(allData);
+            } catch (e) {
+                document.getElementById('itemList').innerHTML = '<div style="text-align:center;color:#888;">數據載入失敗，請確認 data.json 格式</div>';
             }
         }
 
-        function getTrendInfo(history) {
-            if (!history || history.length < 2) return { text: "─ 0.0%", class: "flat" };
-            const current = history[history.length - 1];
-            const prev = history[history.length - 2];
-            const diff = current - prev;
-            const percent = ((diff / prev) * 100).toFixed(1);
-            if (diff > 0) return { text: `▲ +${percent}%`, class: "up" };
-            if (diff < 0) return { text: `▼ ${percent}%`, class: "down" };
-            return { text: "─ 0.0%", class: "flat" };
+        function renderCategories() {
+            const cats = ['ALL', ...new Set(allData.map(i => i.category || i.type || '未分類'))];
+            const catGroup = document.getElementById('catGroup');
+            catGroup.innerHTML = cats.map(c => `
+                <button class="cat-btn ${c === 'ALL' ? 'active' : ''}" onclick="filterCat('${c}', this)">
+                    ${c === 'ALL' ? '全部物品' : c}
+                </button>
+            `).join('');
         }
 
-        function renderList(data) {
-            const listDiv = document.getElementById("market-list");
-            listDiv.innerHTML = "";
-            if (data.length === 0) {
-                listDiv.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:30px; color:#666;">查無對應物資數據</div>';
+        function filterCat(cat, btn) {
+            if(btn) {
+                document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+            if (cat === 'ALL') {
+                renderItems(allData);
+            } else {
+                const filtered = allData.filter(i => (i.category || i.type || '未分類') === cat);
+                renderItems(filtered);
+            }
+        }
+
+        function renderItems(data) {
+            const list = document.getElementById('itemList');
+            if (!data || data.length === 0) {
+                list.innerHTML = '<div style="text-align:center;color:#888;margin-top:20px;">查無對應物資數據</div>';
                 return;
             }
-            data.forEach((item) => {
-                const latestPrice = item.history[item.history.length - 1];
-                const trend = getTrendInfo(item.history);
-                
-                const predRateNum = parseFloat(item.predictedRate || 0);
-                const predSign = predRateNum > 0 ? '+' : '';
-
-                const card = document.createElement("div");
-                card.className = `card ${item.quality || 'gold'}`;
-                card.onclick = () => openChart(item);
-                card.innerHTML = `
-                    <div>
-                        <div class="item-title">${item.name}</div>
-                        <div class="item-meta">${item.category || '通用'}</div>
-                        <div class="ai-badge">🤖 AI預測: ${predSign}${predRateNum}%</div>
+            list.innerHTML = data.map(item => `
+                <div class="item-card">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">${item.name}</div>
+                            <div style="font-size:0.8rem;color:#888;">${item.category || item.type || '通用品'}</div>
+                            <div class="ai-tag">🤖 AI預測: ${item.predict || item.trend || '+0.0%'}</div>
+                        </div>
+                        <div class="item-price">
+                            ${Number(item.price || 0).toLocaleString()} 哈夫幣
+                        </div>
                     </div>
-                    <div class="price-container">
-                        <div class="price">${latestPrice.toLocaleString()} 哈夫幣</div>
-                        <div class="trend ${trend.class}">${trend.text}</div>
-                    </div>
-                `;
-                listDiv.appendChild(card);
-            });
+                </div>
+            `).join('');
         }
 
-        function openChart(item) {
-            document.getElementById("modal-title").innerText = item.name;
-            document.getElementById("chart-modal").style.display = "flex";
-
-            const predRateNum = parseFloat(item.predictedRate || 0);
-            const predSign = predRateNum > 0 ? '+' : '';
-            const predColor = predRateNum > 0 ? '#f44336' : (predRateNum < 0 ? '#4caf50' : '#aaa');
-
-            const predPrice = item.predictedPrice || item.history[item.history.length - 1];
-            document.getElementById("ai-pred-price").innerText = `${predPrice.toLocaleString()} 哈夫幣`;
-            document.getElementById("ai-pred-rate").innerHTML = `<span style="color:${predColor}">${predSign}${predRateNum}%</span>`;
-
-            const ctx = document.getElementById('priceChart').getContext('2d');
-            if (myChart) myChart.destroy();
-
-            const chartLabels = item.history.map((_, idx) => `點位 ${idx + 1}`);
-            chartLabels.push("AI預測");
-
-            const historicalData = [...item.history, null];
-            const predictedData = new Array(item.history.length - 1).fill(null);
-            predictedData.push(item.history[item.history.length - 1], predPrice);
-
-            myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: chartLabels,
-                    datasets: [
-                        {
-                            label: '歷史走勢',
-                            data: historicalData,
-                            borderColor: '#ffc107',
-                            backgroundColor: 'rgba(255, 193, 7, 0.15)',
-                            borderWidth: 3,
-                            fill: false,
-                            tension: 0.2,
-                            pointRadius: 5
-                        },
-                        {
-                            label: 'AI 預測價格',
-                            data: predictedData,
-                            borderColor: '#00d2ff',
-                            borderDash: [6, 6],
-                            backgroundColor: 'rgba(0, 210, 255, 0.1)',
-                            borderWidth: 3,
-                            fill: false,
-                            tension: 0.2,
-                            pointRadius: 6,
-                            pointBackgroundColor: '#00d2ff'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { 
-                        legend: { 
-                            display: true,
-                            labels: { color: '#ccc' }
-                        } 
-                    },
-                    scales: {
-                        x: { grid: { color: '#333' }, ticks: { color: '#aaa' } },
-                        y: { grid: { color: '#333' }, ticks: { color: '#aaa' } }
-                    }
-                }
-            });
-        }
-
-        function closeModal(e) { document.getElementById("chart-modal").style.display = "none"; }
-        function closeModalDirect() { document.getElementById("chart-modal").style.display = "none"; }
-
-        function filterData() {
-            const searchText = document.getElementById("search-input").value.toLowerCase();
-            const items = Object.values(rawDatabase);
-            const filtered = items.filter(item => {
-                const matchCat = (currentCategory === "全部" || item.category === currentCategory);
-                const matchSearch = item.name.toLowerCase().includes(searchText);
-                return matchCat && matchSearch;
-            });
-            renderList(filtered);
-        }
-
-        function setCategory(cat, btn) {
-            currentCategory = cat;
-            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            filterData();
-        }
-
-        initData();
+        loadData();
     </script>
 </body>
 </html>
