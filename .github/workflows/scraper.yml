@@ -8,9 +8,13 @@ on:
 jobs:
   scrape-and-update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -25,12 +29,8 @@ jobs:
       - name: Run Scraper & AI Prediction
         run: python scraper.py
 
-      - name: Commit and Push Updated Data
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin main
-          git reset --soft origin/main
-          git add data.json
-          git commit -m "Auto update market data" || exit 0
-          git push --force origin main
+      - name: Auto Commit and Push Data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto update market data [skip ci]"
+          file_pattern: "data.json"
