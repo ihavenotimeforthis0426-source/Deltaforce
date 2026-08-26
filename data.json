@@ -1,1 +1,72 @@
-{}
+{
+  "曼德爾磚": {
+    "name": "曼德爾磚",
+    "category": "高價值物品",
+    "quality": "red",
+    "history": [
+      1850000
+    ],
+    "predictedPrice": 1850000,
+    "predictedRate": 0.0
+  },
+  "海洋之淚": {
+    "name": "海洋之淚",
+    "category": "高價值物品",
+    "quality": "red",
+    "history": [
+      1200000
+    ],
+    "predictedPrice": 1200000,
+    "predictedRate": 0.0
+  },
+  "絕密文件": {
+    "name": "絕密文件",
+    "category": "高價值物品",
+    "quality": "red",
+    "history": [
+      3500000
+    ],
+    "predictedPrice": 3500000,
+    "predictedRate": 0.0
+  },
+  "通用防彈衣 (6級)": {
+    "name": "通用防彈衣 (6級)",
+    "category": "護甲裝備",
+    "quality": "purple",
+    "history": [
+      450000
+    ],
+    "predictedPrice": 450000,
+    "predictedRate": 0.0
+  },
+  "戰術頭盔 (6級)": {
+    "name": "戰術頭盔 (6級)",
+    "category": "護甲裝備",
+    "quality": "purple",
+    "history": [
+      380000
+    ],
+    "predictedPrice": 380000,
+    "predictedRate": 0.0
+  },
+  "M4A1 突擊步槍": {
+    "name": "M4A1 突擊步槍",
+    "category": "武器配件",
+    "quality": "blue",
+    "history": [
+      85000
+    ],
+    "predictedPrice": 85000,
+    "predictedRate": 0.0
+  },
+  "醫療箱 (大)": {
+    "name": "醫療箱 (大)",
+    "category": "醫療物資",
+    "quality": "blue",
+    "history": [
+      42000
+    ],
+    "predictedPrice": 42000,
+    "predictedRate": 0.0
+  }
+}
