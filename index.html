@@ -5,98 +5,183 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>三角洲行動 交易所即時看板</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: #121212; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 15px; }
-    .header { text-align: center; margin-bottom: 15px; }
-    .header h1 { font-size: 20px; color: #4caf50; margin-bottom: 5px; }
-    .status { font-size: 12px; color: #888; margin-top: 5px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-top: 15px; }
-    .card { background: #1e1e1e; border-radius: 8px; padding: 15px; border: 1px solid #333; }
-    .card-title { font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 8px; display: flex; justify-content: space-between; }
-    .category { font-size: 11px; background: #333; color: #aaa; padding: 2px 6px; border-radius: 4px; }
-    .price-box { margin: 10px 0; font-size: 14px; }
-    .price-num { font-size: 18px; font-weight: bold; color: #ff9800; }
-    .prediction { font-size: 13px; color: #4caf50; margin-top: 4px; }
-    .tag { display: inline-block; padding: 3px 8px; font-size: 12px; border-radius: 4px; font-weight: bold; margin-top: 8px; }
-    .tag-up { background: #2e7d32; color: #fff; }
-    .tag-down { background: #c62828; color: #fff; }
-    .tag-stable { background: #1565c0; color: #fff; }
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --accent-green: #22c55e;
+      --accent-red: #ef4444;
+      --accent-purple: #a855f7;
+      --accent-blue: #3b82f6;
+      --accent-gold: #eab308;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      margin: 0;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      color: var(--accent-green);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .status-text {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      border-left: 4px solid var(--text-sub);
+    }
+
+    .card.red { border-left-color: var(--accent-red); }
+    .card.purple { border-left-color: var(--accent-purple); }
+    .card.blue { border-left-color: var(--accent-blue); }
+    .card.gold { border-left-color: var(--accent-gold); }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .item-name {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .item-category {
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--text-sub);
+    }
+
+    .price-group {
+      margin-top: 8px;
+    }
+
+    .current-price {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .predicted-price {
+      font-size: 0.9rem;
+      margin-top: 4px;
+      color: var(--text-sub);
+    }
+
+    .rate-up { color: var(--accent-red); }
+    .rate-down { color: var(--accent-green); }
+
+    .loading, .error {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-sub);
+    }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>三角洲行動 交易所即時看板</h1>
-    <div class="status" id="status">正在載入市場資料...</div>
+  <div class="container">
+    <header>
+      <h1>三角洲行動 交易所即時看板</h1>
+      <div id="status" class="status-text">載入中...</div>
+    </header>
+
+    <div id="market-grid" class="grid"></div>
   </div>
 
-  <div class="grid" id="market-list"></div>
-
   <script>
-    async function loadData() {
+    // 直接調用 GitHub 上最新的 data.json，跨過 Netlify 本地檔案限制
+    const DATA_URL = 'https://raw.githubusercontent.com/ihavenotimeforthis0426-source/Deltaforce/main/data.json';
+
+    async function loadMarketData() {
       const statusEl = document.getElementById('status');
-      const listEl = document.getElementById('market-list');
+      const gridEl = document.getElementById('market-grid');
 
       try {
-        // 加入時間戳記避免瀏覽器快取舊資料
-        const response = await fetch('./data.json?t=' + new Date().getTime());
-        if (!response.ok) throw new Error('無法讀取 data.json');
+        // 加上時間戳記避免讀取到瀏覽器快取
+        const response = await fetch(`${DATA_URL}?t=${new Date().getTime()}`);
         
-        let data = await response.json();
-        
-        // 如果 JSON 是物件格式，嘗試轉成陣列
-        if (!Array.isArray(data)) {
-          if (data.items) data = data.items;
-          else data = Object.values(data);
+        if (!response.ok) {
+          throw new Error(`HTTP 錯誤狀態碼: ${response.status}`);
         }
 
-        if (!data || data.length === 0) {
-          statusEl.innerText = '目前無資料或 data.json 為空';
+        const data = await response.json();
+        const items = Object.values(data);
+
+        if (items.length === 0) {
+          statusEl.innerText = "目前沒有物資資料";
           return;
         }
 
-        statusEl.innerText = '最後更新時間：' + new Date().toLocaleTimeString();
-        listEl.innerHTML = '';
+        statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆資料)`;
+        gridEl.innerHTML = '';
 
-        data.forEach(item => {
-          const name = item.name || item.item_name || '未知物資';
-          const category = item.category || '通用';
-          const price = item.price || item.current_price || 0;
-          const predPrice = item.predicted_price || item.target_price || price;
-          const trend = item.trend || 'stable';
-          const rec = item.recommendation || '觀望';
-
-          let trendClass = 'tag-stable';
-          if (trend === 'up' || rec.includes('買') || rec.includes('持有')) trendClass = 'tag-up';
-          if (trend === 'down' || rec.includes('賣')) trendClass = 'tag-down';
-
+        items.forEach(item => {
           const card = document.createElement('div');
-          card.className = 'card';
+          card.className = `card ${item.quality || 'gold'}`;
+
+          const rateClass = item.predictedRate >= 0 ? 'rate-up' : 'rate-down';
+          const rateSymbol = item.predictedRate >= 0 ? '▲' : '▼';
+
           card.innerHTML = `
-            <div class="card-title">
-              <span>${name}</span>
-              <span class="category">${category}</span>
+            <div class="card-header">
+              <span class="item-name">${item.name}</span>
+              <span class="item-category">${item.category || '通用'}</span>
             </div>
-            <div class="price-box">
-              目前價格：<span class="price-num">$${price.toLocaleString()}</span>
-            </div>
-            <div class="prediction">
-              AI 預測價格：$${predPrice.toLocaleString()}
-            </div>
-            <div>
-              <span class="tag ${trendClass}">${rec}</span>
+            <div class="price-group">
+              <div class="current-price">$ ${(item.history ? item.history[item.history.length - 1] : 0).toLocaleString()} 哈夫幣</div>
+              <div class="predicted-price">
+                AI 預測價格: $ ${(item.predictedPrice || 0).toLocaleString()} 
+                <span class="${rateClass}">(${rateSymbol} ${Math.abs(item.predictedRate || 0)}%)</span>
+              </div>
             </div>
           `;
-          listEl.appendChild(card);
+          gridEl.appendChild(card);
         });
 
-      } catch (err) {
-        console.error(err);
-        statusEl.innerText = '讀取資料失敗，請確認 data.json 格式與路徑';
+      } catch (error) {
+        console.error("載入失敗：", error);
+        statusEl.innerText = `讀取資料失敗，請確認 data.json 格式與路徑 (${error.message})`;
       }
     }
 
-    loadData();
+    // 頁面開啟時自動執行
+    loadMarketData();
   </script>
 </body>
 </html>
