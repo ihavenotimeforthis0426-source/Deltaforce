@@ -96,5 +96,35 @@
     ],
     "predictedPrice": 42000,
     "predictedRate": 0.0
+  },
+  "Vector擴充CMAG70發": {
+    "name": "Vector擴充CMAG70發",
+    "category": "通用物資",
+    "quality": "blue",
+    "history": [
+      70.0
+    ],
+    "predictedPrice": 70.0,
+    "predictedRate": 0.0
+  },
+  "M700平流層長槍管": {
+    "name": "M700平流層長槍管",
+    "category": "通用物資",
+    "quality": "blue",
+    "history": [
+      700.0
+    ],
+    "predictedPrice": 700.0,
+    "predictedRate": 0.0
+  },
+  "M700獵食軍規槍管": {
+    "name": "M700獵食軍規槍管",
+    "category": "通用物資",
+    "quality": "blue",
+    "history": [
+      700.0
+    ],
+    "predictedPrice": 700.0,
+    "predictedRate": 0.0
   }
 }
