@@ -4,19 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>三角洲行動 交易所即時看板</title>
-  <!-- 載入 Chart.js 繪製價格折線圖 -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
+      --bg-color: #0d131d;
+      --card-bg: #16202e;
+      --card-hover: #1f2d40;
       --text-main: #f8fafc;
-      --text-sub: #94a3b8;
-      --accent-green: #22c55e;
-      --accent-red: #ef4444;
+      --text-sub: #8a9ba8;
+      --accent-green: #00ff88;
+      --accent-red: #ff4d4d;
       --accent-purple: #a855f7;
       --accent-blue: #3b82f6;
       --accent-gold: #eab308;
+      --border-color: rgba(255, 255, 255, 0.08);
     }
 
     body {
@@ -43,7 +44,8 @@
     h1 {
       color: var(--accent-green);
       font-size: 1.6rem;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
     }
 
     .status-text {
@@ -51,7 +53,7 @@
       color: var(--text-sub);
     }
 
-    /* 分類篩選按鈕區 */
+    /* 遊戲風格分類按鈕列 */
     .filter-group {
       display: flex;
       flex-wrap: wrap;
@@ -63,35 +65,42 @@
     .filter-btn {
       background-color: var(--card-bg);
       color: var(--text-sub);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 6px 14px;
-      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      padding: 8px 18px;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      font-weight: 500;
       transition: all 0.2s ease;
     }
 
     .filter-btn.active, .filter-btn:hover {
-      background-color: var(--accent-green);
-      color: #000;
+      background-color: #203147;
+      color: var(--accent-green);
+      border-color: var(--accent-green);
       font-weight: bold;
     }
 
+    /* 物品列表 Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 16px;
+      gap: 14px;
     }
 
     .card {
       background-color: var(--card-bg);
       border-radius: 8px;
-      padding: 16px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      padding: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
       border-left: 4px solid var(--text-sub);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      cursor: pointer;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      background-color: var(--card-hover);
     }
 
     .card.red { border-left-color: var(--accent-red); }
@@ -108,24 +117,21 @@
 
     .item-name {
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
     .item-category {
       font-size: 0.75rem;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2px 6px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
       border-radius: 4px;
       color: var(--text-sub);
     }
 
-    .price-group {
-      margin-top: 4px;
-    }
-
     .current-price {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: bold;
+      color: #fff;
     }
 
     .predicted-price {
@@ -137,9 +143,57 @@
     .rate-up { color: var(--accent-red); }
     .rate-down { color: var(--accent-green); }
 
-    .chart-container {
-      margin-top: 12px;
-      height: 70px;
+    .click-hint {
+      font-size: 0.75rem;
+      color: var(--accent-green);
+      text-align: right;
+      margin-top: 8px;
+      opacity: 0.8;
+    }
+
+    /* 點擊看折線圖彈窗 Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 1.5rem;
+      color: var(--text-sub);
+      cursor: pointer;
+    }
+
+    .modal-close:hover { color: #fff; }
+
+    .modal-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .chart-box {
+      margin-top: 16px;
+      height: 200px;
       width: 100%;
     }
   </style>
@@ -149,21 +203,64 @@
   <div class="container">
     <header>
       <h1>三角洲行動 交易所即時看板</h1>
-      <div id="status" class="status-text">載入中...</div>
+      <div id="status" class="status-text">載入數據中...</div>
     </header>
 
-    <!-- 分類按鈕列 -->
+    <!-- 依照圖片製作之 7 大官方分類選單 -->
     <div id="filter-container" class="filter-group">
       <button class="filter-btn active" onclick="filterItems('全部')">全部</button>
+      <button class="filter-btn" onclick="filterItems('槍械')">槍械</button>
+      <button class="filter-btn" onclick="filterItems('裝備')">裝備</button>
+      <button class="filter-btn" onclick="filterItems('配件')">配件</button>
+      <button class="filter-btn" onclick="filterItems('彈藥')">彈藥</button>
+      <button class="filter-btn" onclick="filterItems('收集品')">收集品</button>
+      <button class="filter-btn" onclick="filterItems('消耗品')">消耗品</button>
+      <button class="filter-btn" onclick="filterItems('門卡')">門卡</button>
     </div>
 
-    <!-- 物資清單卡片區 -->
+    <!-- 交易所卡片網格 -->
     <div id="market-grid" class="grid"></div>
+  </div>
+
+  <!-- 折線圖彈窗 (Modal) -->
+  <div id="modal-overlay" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModalDirect()">&times;</span>
+      <div id="modal-title" class="modal-title">物資名稱</div>
+      <div id="modal-subtitle" class="status-text">分類</div>
+      <hr style="border-color: var(--border-color); margin: 12px 0;">
+      <div id="modal-price" class="current-price">$ 0 哈夫幣</div>
+      <div id="modal-predicted" class="predicted-price">AI 預測價格: $ 0</div>
+      
+      <div class="chart-box">
+        <canvas id="modalChart"></canvas>
+      </div>
+    </div>
   </div>
 
   <script>
     let allMarketItems = {};
     let currentFilter = '全部';
+    let chartInstance = null;
+
+    // 自動依照物品名稱推算分類（防止爬蟲沒分類時歸類錯亂）
+    function inferCategory(item) {
+      const name = item.name || '';
+      const cat = item.category || '';
+
+      if (cat && ['槍械', '裝備', '配件', '彈藥', '收集品', '消耗品', '門卡'].includes(cat)) {
+        return cat;
+      }
+      if (name.includes('步槍') || name.includes('衝鋒槍') || name.includes('狙擊') || name.includes('手槍') || name.includes('散彈')) return '槍械';
+      if (name.includes('甲') || name.includes('頭盔') || name.includes('背包') || name.includes('胸掛')) return '裝備';
+      if (name.includes('握把') || name.includes('瞄準') || name.includes('槍口') || name.includes('槍托') || name.includes('彈匣')) return '配件';
+      if (name.includes('彈') || name.includes('子彈')) return '彈藥';
+      if (name.includes('磚') || name.includes('淚') || name.includes('文件') || name.includes('金') || name.includes('高價值')) return '收集品';
+      if (name.includes('卡') || name.includes('鑰匙')) return '門卡';
+      if (name.includes('藥') || name.includes('針') || name.includes('包')) return '消耗品';
+
+      return '收集品'; // 預設歸類為收集品
+    }
 
     async function loadMarketData() {
       const statusEl = document.getElementById('status');
@@ -180,9 +277,7 @@
           return;
         }
 
-        statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆資料)`;
-        
-        setupCategories(items);
+        statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆物資)`;
         renderGrid();
 
       } catch (e) {
@@ -190,32 +285,24 @@
       }
     }
 
-    // 動態建置分類篩選按鈕
-    function setupCategories(items) {
-      const filterContainer = document.getElementById('filter-container');
-      const categories = ['全部', ...new Set(items.map(i => i.category || '通用物資'))];
-
-      filterContainer.innerHTML = categories.map(cat => `
-        <button class="filter-btn ${cat === currentFilter ? 'active' : ''}" onclick="filterItems('${cat}')">${cat}</button>
-      `).join('');
-    }
-
     function filterItems(category) {
       currentFilter = category;
-      setupCategories(Object.values(allMarketItems));
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText === category);
+      });
       renderGrid();
     }
 
-    // 渲染卡片與繪製折線圖
     function renderGrid() {
       const gridEl = document.getElementById('market-grid');
       gridEl.innerHTML = '';
 
       const items = Object.values(allMarketItems).filter(item => {
-        return currentFilter === '全部' || (item.category || '通用物資') === currentFilter;
+        const cat = inferCategory(item);
+        return currentFilter === '全部' || cat === currentFilter;
       });
 
-      items.forEach((item, index) => {
+      items.forEach(item => {
         const card = document.createElement('div');
         card.className = `card ${item.quality || 'gold'}`;
 
@@ -226,60 +313,84 @@
         const history = item.history && item.history.length > 0 ? item.history : [item.price || 0];
         const currentPrice = history[history.length - 1];
         const predictedPrice = item.predictedPrice || currentPrice;
-
-        const chartId = `chart-${index}`;
+        const category = inferCategory(item);
 
         card.innerHTML = `
-          <div>
-            <div class="card-header">
-              <span class="item-name">${item.name}</span>
-              <span class="item-category">${item.category || '通用物資'}</span>
-            </div>
-            <div class="price-group">
-              <div class="current-price">$ ${currentPrice.toLocaleString()} 哈夫幣</div>
-              <div class="predicted-price">
-                AI 預測價格: $ ${predictedPrice.toLocaleString()} 
-                <span class="${rateClass}">(${rateSymbol} ${Math.abs(rate)}%)</span>
-              </div>
-            </div>
+          <div class="card-header">
+            <span class="item-name">${item.name}</span>
+            <span class="item-category">${category}</span>
           </div>
-          <div class="chart-container">
-            <canvas id="${chartId}"></canvas>
+          <div classcurrent-price">$ ${currentPrice.toLocaleString()} 哈夫幣</div>
+          <div class="predicted-price">
+            AI 預測: $ ${predictedPrice.toLocaleString()} 
+            <span class="${rateClass}">(${rateSymbol} ${Math.abs(rate)}%)</span>
           </div>
+          <div class="click-hint">點擊查看走勢圖 📈</div>
         `;
 
-        gridEl.appendChild(card);
+        // 點擊卡片開啟彈窗折線圖
+        card.onclick = () => openModal(item, category, currentPrice, predictedPrice, rate, history);
 
-        // 繪製 Chart.js 價格歷史趨勢折線圖
-        setTimeout(() => {
-          const ctx = document.getElementById(chartId);
-          if (ctx) {
-            new Chart(ctx, {
-              type: 'line',
-              data: {
-                labels: history.map((_, i) => i + 1),
-                datasets: [{
-                  data: history,
-                  borderColor: rate >= 0 ? '#ef4444' : '#22c55e',
-                  borderWidth: 2,
-                  pointRadius: 0,
-                  tension: 0.3,
-                  fill: false
-                }]
-              },
-              options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false }, tooltip: { enabled: true } },
-                scales: {
-                  x: { display: false },
-                  y: { display: false }
-                }
-              }
-            });
-          }
-        }, 50);
+        gridEl.appendChild(card);
       });
+    }
+
+    // 彈窗與 Chart.js 控制
+    function openModal(item, category, currentPrice, predictedPrice, rate, history) {
+      const rateClass = rate >= 0 ? 'rate-up' : 'rate-down';
+      const rateSymbol = rate >= 0 ? '▲' : '▼';
+
+      document.getElementById('modal-title').innerText = item.name;
+      document.getElementById('modal-subtitle').innerText = `分類：${category}`;
+      document.getElementById('modal-price').innerText = `$ ${currentPrice.toLocaleString()} 哈夫幣`;
+      document.getElementById('modal-predicted').innerHTML = `
+        AI 預測價格: $ ${predictedPrice.toLocaleString()} 
+        <span class="${rateClass}">(${rateSymbol} ${Math.abs(rate)}%)</span>
+      `;
+
+      document.getElementById('modal-overlay').style.display = 'flex';
+
+      // 銷毀舊圖表並重新繪製
+      if (chartInstance) chartInstance.destroy();
+
+      const ctx = document.getElementById('modalChart').getContext('2d');
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: history.map((_, i) => `紀錄 ${i + 1}`),
+          datasets: [{
+            label: '歷史價格',
+            data: history,
+            borderColor: rate >= 0 ? '#ff4d4d' : '#00ff88',
+            backgroundColor: rate >= 0 ? 'rgba(255, 77, 77, 0.1)' : 'rgba(0, 255, 136, 0.1)',
+            borderWidth: 2,
+            pointRadius: 4,
+            tension: 0.3,
+            fill: true
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8a9ba8' } },
+            y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8a9ba8' } }
+          }
+        }
+      });
+    }
+
+    function closeModal(e) {
+      if (e.target.id === 'modal-overlay') {
+        document.getElementById('modal-overlay').style.display = 'none';
+      }
+    }
+
+    function closeModalDirect() {
+      document.getElementById('modal-overlay').style.display = 'none';
     }
 
     loadMarketData();
