@@ -4,7 +4,6 @@
     "category": "高價值物品",
     "quality": "red",
     "history": [
-      1850000,
       1850000
     ],
     "predictedPrice": 1850000,
@@ -15,7 +14,6 @@
     "category": "高價值物品",
     "quality": "red",
     "history": [
-      1200000,
       1200000
     ],
     "predictedPrice": 1200000,
@@ -26,7 +24,6 @@
     "category": "高價值物品",
     "quality": "red",
     "history": [
-      3500000,
       3500000
     ],
     "predictedPrice": 3500000,
@@ -37,7 +34,6 @@
     "category": "護甲裝備",
     "quality": "purple",
     "history": [
-      450000,
       450000
     ],
     "predictedPrice": 450000,
@@ -48,7 +44,6 @@
     "category": "護甲裝備",
     "quality": "purple",
     "history": [
-      380000,
       380000
     ],
     "predictedPrice": 380000,
@@ -59,7 +54,6 @@
     "category": "武器配件",
     "quality": "blue",
     "history": [
-      85000,
       85000
     ],
     "predictedPrice": 85000,
@@ -70,7 +64,6 @@
     "category": "醫療物資",
     "quality": "blue",
     "history": [
-      42000,
       42000
     ],
     "predictedPrice": 42000,
