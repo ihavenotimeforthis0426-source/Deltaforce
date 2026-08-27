@@ -125,70 +125,58 @@
   </div>
 
   <script>
-    const DATA_SOURCES = [
-      './data.json',
-      'https://raw.githubusercontent.com/ihavenotimeforthis0426-source/Deltaforce/main/data.json',
-      'https://raw.githubusercontent.com/ihavenotimeforthis0426-source/Deltaforce/master/data.json'
-    ];
-
     async function loadMarketData() {
       const statusEl = document.getElementById('status');
       const gridEl = document.getElementById('market-grid');
-      let loadedData = null;
-      let lastError = '';
 
-      for (const src of DATA_SOURCES) {
-        try {
-          const res = await fetch(`${src}?t=${new Date().getTime()}`);
-          if (res.ok) {
-            loadedData = await res.json();
-            break;
-          } else {
-            lastError = `${src} (HTTP ${res.status})`;
-          }
-        } catch (e) {
-          lastError = `${src} (${e.message})`;
+      // 動態抓取相對路徑上的 data.json
+      const targetUrl = `./data.json?t=${new Date().getTime()}`;
+
+      try {
+        const res = await fetch(targetUrl);
+        
+        if (!res.ok) {
+          throw new Error(`找不到檔案 (HTTP ${res.status})`);
         }
-      }
 
-      if (!loadedData) {
-        statusEl.innerText = `讀取失敗：${lastError}`;
-        return;
-      }
+        const loadedData = await res.json();
+        const items = Object.values(loadedData);
 
-      const items = Object.values(loadedData);
+        if (items.length === 0) {
+          statusEl.innerText = "資料庫建立中 (data.json 暫無內容)";
+          return;
+        }
 
-      if (items.length === 0) {
-        statusEl.innerText = "data.json 內暫無資料";
-        return;
-      }
+        statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆資料)`;
+        gridEl.innerHTML = '';
 
-      statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆資料)`;
-      gridEl.innerHTML = '';
+        items.forEach(item => {
+          const card = document.createElement('div');
+          card.className = `card ${item.quality || 'gold'}`;
 
-      items.forEach(item => {
-        const card = document.createElement('div');
-        card.className = `card ${item.quality || 'gold'}`;
+          const rateClass = (item.predictedRate || 0) >= 0 ? 'rate-up' : 'rate-down';
+          const rateSymbol = (item.predictedRate || 0) >= 0 ? '▲' : '▼';
+          const currentPrice = item.history && item.history.length > 0 ? item.history[item.history.length - 1] : (item.price || 0);
 
-        const rateClass = (item.predictedRate || 0) >= 0 ? 'rate-up' : 'rate-down';
-        const rateSymbol = (item.predictedRate || 0) >= 0 ? '▲' : '▼';
-        const currentPrice = item.history && item.history.length > 0 ? item.history[item.history.length - 1] : (item.price || 0);
-
-        card.innerHTML = `
-          <div class="card-header">
-            <span class="item-name">${item.name}</span>
-            <span class="item-category">${item.category || '通用'}</span>
-          </div>
-          <div class="price-group">
-            <div class="current-price">$ ${currentPrice.toLocaleString()} 哈夫幣</div>
-            <div class="predicted-price">
-              AI 預測價格: $ ${(item.predictedPrice || currentPrice).toLocaleString()} 
-              <span class="${rateClass}">(${rateSymbol} ${Math.abs(item.predictedRate || 0)}%)</span>
+          card.innerHTML = `
+            <div class="card-header">
+              <span class="item-name">${item.name}</span>
+              <span class="item-category">${item.category || '通用'}</span>
             </div>
-          </div>
-        `;
-        gridEl.appendChild(card);
-      });
+            <div class="price-group">
+              <div class="current-price">$ ${currentPrice.toLocaleString()} 哈夫幣</div>
+              <div class="predicted-price">
+                AI 預測價格: $ ${(item.predictedPrice || currentPrice).toLocaleString()} 
+                <span class="${rateClass}">(${rateSymbol} ${Math.abs(item.predictedRate || 0)}%)</span>
+              </div>
+            </div>
+          `;
+          gridEl.appendChild(card);
+        });
+
+      } catch (e) {
+        statusEl.innerText = `讀取失敗：${e.message}`;
+      }
     }
 
     loadMarketData();
