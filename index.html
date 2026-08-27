@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>三角洲行動 交易所即時看板</title>
+  <!-- 載入 Chart.js 繪製價格折線圖 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     :root {
       --bg-color: #0f172a;
@@ -29,18 +31,18 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       width: 100%;
     }
 
     header {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     h1 {
       color: var(--accent-green);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin-bottom: 8px;
     }
 
@@ -49,9 +51,35 @@
       color: var(--text-sub);
     }
 
+    /* 分類篩選按鈕區 */
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-btn {
+      background-color: var(--card-bg);
+      color: var(--text-sub);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background-color: var(--accent-green);
+      color: #000;
+      font-weight: bold;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 16px;
     }
 
@@ -61,6 +89,9 @@
       padding: 16px;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
       border-left: 4px solid var(--text-sub);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card.red { border-left-color: var(--accent-red); }
@@ -72,7 +103,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .item-name {
@@ -89,16 +120,16 @@
     }
 
     .price-group {
-      margin-top: 8px;
+      margin-top: 4px;
     }
 
     .current-price {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: bold;
     }
 
     .predicted-price {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-top: 4px;
       color: var(--text-sub);
     }
@@ -106,10 +137,10 @@
     .rate-up { color: var(--accent-red); }
     .rate-down { color: var(--accent-green); }
 
-    .loading, .error {
-      text-align: center;
-      padding: 40px;
-      color: var(--text-sub);
+    .chart-container {
+      margin-top: 12px;
+      height: 70px;
+      width: 100%;
     }
   </style>
 </head>
@@ -121,62 +152,134 @@
       <div id="status" class="status-text">載入中...</div>
     </header>
 
+    <!-- 分類按鈕列 -->
+    <div id="filter-container" class="filter-group">
+      <button class="filter-btn active" onclick="filterItems('全部')">全部</button>
+    </div>
+
+    <!-- 物資清單卡片區 -->
     <div id="market-grid" class="grid"></div>
   </div>
 
   <script>
+    let allMarketItems = {};
+    let currentFilter = '全部';
+
     async function loadMarketData() {
       const statusEl = document.getElementById('status');
-      const gridEl = document.getElementById('market-grid');
-
-      // 動態抓取相對路徑上的 data.json
-      const targetUrl = `./data.json?t=${new Date().getTime()}`;
-
+      
       try {
-        const res = await fetch(targetUrl);
-        
-        if (!res.ok) {
-          throw new Error(`找不到檔案 (HTTP ${res.status})`);
-        }
+        const res = await fetch(`./data.json?t=${new Date().getTime()}`);
+        if (!res.ok) throw new Error("找不到 data.json");
 
-        const loadedData = await res.json();
-        const items = Object.values(loadedData);
+        allMarketItems = await res.json();
+        const items = Object.values(allMarketItems);
 
         if (items.length === 0) {
-          statusEl.innerText = "資料庫建立中 (data.json 暫無內容)";
+          statusEl.innerText = "data.json 暫無物資資料";
           return;
         }
 
         statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆資料)`;
-        gridEl.innerHTML = '';
-
-        items.forEach(item => {
-          const card = document.createElement('div');
-          card.className = `card ${item.quality || 'gold'}`;
-
-          const rateClass = (item.predictedRate || 0) >= 0 ? 'rate-up' : 'rate-down';
-          const rateSymbol = (item.predictedRate || 0) >= 0 ? '▲' : '▼';
-          const currentPrice = item.history && item.history.length > 0 ? item.history[item.history.length - 1] : (item.price || 0);
-
-          card.innerHTML = `
-            <div class="card-header">
-              <span class="item-name">${item.name}</span>
-              <span class="item-category">${item.category || '通用'}</span>
-            </div>
-            <div class="price-group">
-              <div class="current-price">$ ${currentPrice.toLocaleString()} 哈夫幣</div>
-              <div class="predicted-price">
-                AI 預測價格: $ ${(item.predictedPrice || currentPrice).toLocaleString()} 
-                <span class="${rateClass}">(${rateSymbol} ${Math.abs(item.predictedRate || 0)}%)</span>
-              </div>
-            </div>
-          `;
-          gridEl.appendChild(card);
-        });
+        
+        setupCategories(items);
+        renderGrid();
 
       } catch (e) {
         statusEl.innerText = `讀取失敗：${e.message}`;
       }
+    }
+
+    // 動態建置分類篩選按鈕
+    function setupCategories(items) {
+      const filterContainer = document.getElementById('filter-container');
+      const categories = ['全部', ...new Set(items.map(i => i.category || '通用物資'))];
+
+      filterContainer.innerHTML = categories.map(cat => `
+        <button class="filter-btn ${cat === currentFilter ? 'active' : ''}" onclick="filterItems('${cat}')">${cat}</button>
+      `).join('');
+    }
+
+    function filterItems(category) {
+      currentFilter = category;
+      setupCategories(Object.values(allMarketItems));
+      renderGrid();
+    }
+
+    // 渲染卡片與繪製折線圖
+    function renderGrid() {
+      const gridEl = document.getElementById('market-grid');
+      gridEl.innerHTML = '';
+
+      const items = Object.values(allMarketItems).filter(item => {
+        return currentFilter === '全部' || (item.category || '通用物資') === currentFilter;
+      });
+
+      items.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = `card ${item.quality || 'gold'}`;
+
+        const rate = item.predictedRate || 0;
+        const rateClass = rate >= 0 ? 'rate-up' : 'rate-down';
+        const rateSymbol = rate >= 0 ? '▲' : '▼';
+        
+        const history = item.history && item.history.length > 0 ? item.history : [item.price || 0];
+        const currentPrice = history[history.length - 1];
+        const predictedPrice = item.predictedPrice || currentPrice;
+
+        const chartId = `chart-${index}`;
+
+        card.innerHTML = `
+          <div>
+            <div class="card-header">
+              <span class="item-name">${item.name}</span>
+              <span class="item-category">${item.category || '通用物資'}</span>
+            </div>
+            <div class="price-group">
+              <div class="current-price">$ ${currentPrice.toLocaleString()} 哈夫幣</div>
+              <div class="predicted-price">
+                AI 預測價格: $ ${predictedPrice.toLocaleString()} 
+                <span class="${rateClass}">(${rateSymbol} ${Math.abs(rate)}%)</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="${chartId}"></canvas>
+          </div>
+        `;
+
+        gridEl.appendChild(card);
+
+        // 繪製 Chart.js 價格歷史趨勢折線圖
+        setTimeout(() => {
+          const ctx = document.getElementById(chartId);
+          if (ctx) {
+            new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: history.map((_, i) => i + 1),
+                datasets: [{
+                  data: history,
+                  borderColor: rate >= 0 ? '#ef4444' : '#22c55e',
+                  borderWidth: 2,
+                  pointRadius: 0,
+                  tension: 0.3,
+                  fill: false
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                scales: {
+                  x: { display: false },
+                  y: { display: false }
+                }
+              }
+            });
+          }
+        }, 50);
+      });
     }
 
     loadMarketData();
