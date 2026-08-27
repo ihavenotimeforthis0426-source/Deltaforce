@@ -1,91 +1,76 @@
 import json
 import os
+import re
 import time
-from bs4 import BeautifulSoup
-
-# 使用 curl_cffi 繞過 Cloudflare 檢測
-try:
-    from curl_cffi import requests
-except ImportError:
-    import requests
+from playwright.sync_api import sync_playwright
 
 
 def fetch_auction_data():
     items = []
-    # 模擬真實 Chrome 120 的請求標頭與 TLS 密碼套件
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-            " (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        ),
-        "Accept": (
-            "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
-        ),
-        "Accept-Language": "zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7",
-        "Referer": "https://deltaforcetools.gg/",
-    }
 
-    session = requests.Session()
+    with sync_playwright() as p:
+        # 啟動無頭 Chrome 瀏覽器
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+                " (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            ),
+            viewport={"width": 1280, "height": 800},
+        )
+        page = context.new_page()
 
-    for page in range(1, 15):
-        url = f"https://deltaforcetools.gg/tw/auction-house?page={page}"
-        try:
-            # impersonate="chrome120" 模擬真實瀏覽器 TLS 指紋
-            if hasattr(session, "get") and "impersonate" in session.get.__code__.co_varnames:
-                res = session.get(url, headers=headers, impersonate="chrome120", timeout=15)
-            else:
-                res = session.get(url, headers=headers, timeout=15)
+        for page_num in range(1, 11):
+            url = f"https://deltaforcetools.gg/tw/auction-house?page={page_num}"
+            try:
+                # 前往網頁並等待動態 JS 渲染完畢
+                page.goto(url, wait_until="networkidle", timeout=30000)
+                page.wait_for_timeout(2000)
 
-            if res.status_code == 200:
-                soup = BeautifulSoup(res.text, "html.parser")
+                # 提取卡片或表格列表元素
+                cards = page.query_selector_all(
+                    "div[class*='card'], div[class*='item'], tr"
+                )
 
-                # 解析 Next.js 頁面內嵌的 __NEXT_DATA__ JSON 數據（最準確，不受 DOM 結構改變影響）
-                next_data_script = soup.find("script", id="__NEXT_DATA__")
-                if next_data_script and next_data_script.string:
-                    try:
-                        json_data = json.loads(next_data_script.string)
-                        page_props = json_data.get("props", {}).get("pageProps", {})
-                        raw_items = (
-                            page_props.get("auctionItems", [])
-                            or page_props.get("items", [])
-                            or page_props.get("data", [])
+                for card in cards:
+                    text = card.inner_text()
+                    if not text:
+                        continue
+
+                    lines = [
+                        line.strip()
+                        for line in text.split("\n")
+                        if line.strip()
+                    ]
+
+                    # 解析名稱與價格數字
+                    if len(lines) >= 2:
+                        name = lines[0]
+                        # 搜尋包含價格的數字（例：$ 150,000 或 150000）
+                        price_match = re.search(
+                            r"[\$￥]?\s*([0-9,]{3,10})", text
                         )
 
-                        for item in raw_items:
-                            name = item.get("name") or item.get("itemName")
-                            price = item.get("price") or item.get("avgPrice") or item.get("lastPrice")
-                            category = item.get("category") or item.get("type", "通用物資")
+                        if price_match:
+                            raw_price = price_match.group(1).replace(",", "")
+                            price = float(raw_price)
 
-                            if name and price:
-                                items.append({
-                                    "name": str(name).strip(),
-                                    "price": float(price),
-                                    "category": str(category).strip()
-                                })
-                    except Exception as json_err:
-                        print(f"解析 __NEXT_DATA__ 失敗: {json_err}")
-
-                # 如果 Next.js 數據未包含，回退解析 HTML 表格
-                if not items:
-                    rows = soup.select("table tr, div[class*='ItemCard'], div[class*='auction']")
-                    for row in rows:
-                        text_cols = [c.text.strip() for c in row.select("td, span, p, div") if c.text.strip()]
-                        if len(text_cols) >= 2:
-                            name = text_cols[0]
-                            # 提取數字價格
-                            price_digits = "".join(filter(str.isdigit, text_cols[1]))
-                            if price_digits:
+                            # 過濾無效資料或不合理低價
+                            if price > 50 and len(name) < 30:
                                 items.append({
                                     "name": name,
-                                    "price": float(price_digits),
-                                    "category": "通用物資"
+                                    "price": price,
+                                    "category": "交易所物資",
                                 })
 
-            time.sleep(1)
-        except Exception as e:
-            print(f"抓取頁面 {page} 失敗: {e}")
+            except Exception as e:
+                print(f"抓取第 {page_num} 頁失敗: {e}")
 
-    return items
+        browser.close()
+
+    # 依照物資名稱進行去重，留存最後抓到的價格
+    unique_items = {item["name"]: item for item in items}
+    return list(unique_items.values())
 
 
 def update_dataset():
@@ -101,21 +86,24 @@ def update_dataset():
 
     new_items = fetch_auction_data()
 
-    # 絕對防空保護：若未抓到新資料，堅決不覆蓋原有 data.json
     if not new_items:
-        print("【系統保護】本次未抓取到有效數據（可能觸發防爬牆），取消覆蓋更新以保護原有資料庫。")
+        print(
+            "【保護機制】未成功抓取到真實價格數據，取消覆蓋以保護原資料。"
+        )
         return
 
-    print(f"成功抓取到 {len(new_items)} 筆真實物資資料！開始演算趨勢...")
+    print(
+        f"成功抓取到 {len(new_items)} 筆真實物資價格！開始計算預測價格..."
+    )
 
     for item in new_items:
         name = item["name"]
         price = item["price"]
 
         quality = "gold"
-        if "紅色" in name or "機密" in name or price >= 1000000:
+        if price >= 1000000:
             quality = "red"
-        elif "紫色" in name or price >= 300000:
+        elif price >= 300000:
             quality = "purple"
         elif price < 100000:
             quality = "blue"
@@ -125,7 +113,7 @@ def update_dataset():
                 "name": name,
                 "category": item["category"],
                 "quality": quality,
-                "history": [price]
+                "history": [price],
             }
         else:
             existing_data[name]["history"].append(price)
@@ -134,9 +122,14 @@ def update_dataset():
 
         history = existing_data[name]["history"]
         if len(history) >= 2:
-            diffs = [(history[i] - history[i - 1]) / history[i - 1] for i in range(1, len(history))]
+            diffs = [
+                (history[i] - history[i - 1]) / history[i - 1]
+                for i in range(1, len(history))
+            ]
             weights = [i + 1 for i in range(len(diffs))]
-            weighted_rate = sum(d * w for d, w in zip(diffs, weights)) / sum(weights)
+            weighted_rate = sum(d * w for d, w in zip(diffs, weights)) / sum(
+                weights
+            )
             predicted_price = round(price * (1 + weighted_rate))
             predicted_rate = round(weighted_rate * 100, 1)
         else:
@@ -149,7 +142,9 @@ def update_dataset():
     with open(data_file, "w", encoding="utf-8") as f:
         json.dump(existing_data, f, ensure_ascii=False, indent=2)
 
-    print(f"更新成功！資料庫目前共有 {len(existing_data)} 筆物資。")
+    print(
+        f"數據更新完美完成！目前看板共有 {len(existing_data)} 筆正確物資。"
+    )
 
 
 if __name__ == "__main__":
