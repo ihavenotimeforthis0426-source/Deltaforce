@@ -125,62 +125,72 @@
   </div>
 
   <script>
-    // 直接調用 GitHub 上最新的 data.json，跨過 Netlify 本地檔案限制
-    const DATA_URL = 'https://raw.githubusercontent.com/ihavenotimeforthis0426-source/Deltaforce/main/data.json';
+    const DATA_SOURCES = [
+      './data.json',
+      'https://raw.githubusercontent.com/ihavenotimeforthis0426-source/Deltaforce/main/data.json',
+      'https://raw.githubusercontent.com/ihavenotimeforthis0426-source/Deltaforce/master/data.json'
+    ];
 
     async function loadMarketData() {
       const statusEl = document.getElementById('status');
       const gridEl = document.getElementById('market-grid');
+      let loadedData = null;
+      let lastError = '';
 
-      try {
-        // 加上時間戳記避免讀取到瀏覽器快取
-        const response = await fetch(`${DATA_URL}?t=${new Date().getTime()}`);
-        
-        if (!response.ok) {
-          throw new Error(`HTTP 錯誤狀態碼: ${response.status}`);
+      for (const src of DATA_SOURCES) {
+        try {
+          const res = await fetch(`${src}?t=${new Date().getTime()}`);
+          if (res.ok) {
+            loadedData = await res.json();
+            break;
+          } else {
+            lastError = `${src} (HTTP ${res.status})`;
+          }
+        } catch (e) {
+          lastError = `${src} (${e.message})`;
         }
-
-        const data = await response.json();
-        const items = Object.values(data);
-
-        if (items.length === 0) {
-          statusEl.innerText = "目前沒有物資資料";
-          return;
-        }
-
-        statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆資料)`;
-        gridEl.innerHTML = '';
-
-        items.forEach(item => {
-          const card = document.createElement('div');
-          card.className = `card ${item.quality || 'gold'}`;
-
-          const rateClass = item.predictedRate >= 0 ? 'rate-up' : 'rate-down';
-          const rateSymbol = item.predictedRate >= 0 ? '▲' : '▼';
-
-          card.innerHTML = `
-            <div class="card-header">
-              <span class="item-name">${item.name}</span>
-              <span class="item-category">${item.category || '通用'}</span>
-            </div>
-            <div class="price-group">
-              <div class="current-price">$ ${(item.history ? item.history[item.history.length - 1] : 0).toLocaleString()} 哈夫幣</div>
-              <div class="predicted-price">
-                AI 預測價格: $ ${(item.predictedPrice || 0).toLocaleString()} 
-                <span class="${rateClass}">(${rateSymbol} ${Math.abs(item.predictedRate || 0)}%)</span>
-              </div>
-            </div>
-          `;
-          gridEl.appendChild(card);
-        });
-
-      } catch (error) {
-        console.error("載入失敗：", error);
-        statusEl.innerText = `讀取資料失敗，請確認 data.json 格式與路徑 (${error.message})`;
       }
+
+      if (!loadedData) {
+        statusEl.innerText = `讀取失敗：${lastError}`;
+        return;
+      }
+
+      const items = Object.values(loadedData);
+
+      if (items.length === 0) {
+        statusEl.innerText = "data.json 內暫無資料";
+        return;
+      }
+
+      statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆資料)`;
+      gridEl.innerHTML = '';
+
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = `card ${item.quality || 'gold'}`;
+
+        const rateClass = (item.predictedRate || 0) >= 0 ? 'rate-up' : 'rate-down';
+        const rateSymbol = (item.predictedRate || 0) >= 0 ? '▲' : '▼';
+        const currentPrice = item.history && item.history.length > 0 ? item.history[item.history.length - 1] : (item.price || 0);
+
+        card.innerHTML = `
+          <div class="card-header">
+            <span class="item-name">${item.name}</span>
+            <span class="item-category">${item.category || '通用'}</span>
+          </div>
+          <div class="price-group">
+            <div class="current-price">$ ${currentPrice.toLocaleString()} 哈夫幣</div>
+            <div class="predicted-price">
+              AI 預測價格: $ ${(item.predictedPrice || currentPrice).toLocaleString()} 
+              <span class="${rateClass}">(${rateSymbol} ${Math.abs(item.predictedRate || 0)}%)</span>
+            </div>
+          </div>
+        `;
+        gridEl.appendChild(card);
+      });
     }
 
-    // 頁面開啟時自動執行
     loadMarketData();
   </script>
 </body>
