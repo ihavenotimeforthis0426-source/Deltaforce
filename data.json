@@ -93,9 +93,8 @@
     "name": "滑膛槍展品",
     "category": "交易所物資",
     "quality": "purple",
-    "price": 2275210.0,
+    "price": 2174830.0,
     "history": [
-      2409050.0,
       2275210.0,
       2241750.0,
       2609810.0,
@@ -114,10 +113,11 @@
       2576350.0,
       2275210.0,
       2241750.0,
-      2275210.0
+      2275210.0,
+      2174830.0
     ],
-    "predictedPrice": 2259483,
-    "predictedRate": -0.7
+    "predictedPrice": 2150389,
+    "predictedRate": -1.1
   },
   "藍室核心": {
     "name": "藍室核心",
@@ -183,9 +183,8 @@
     "name": "酒店將軍房",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 981626.0,
+    "price": 943871.0,
     "history": [
-      1019381.0,
       981626.0,
       981626.0,
       981626.0,
@@ -204,10 +203,11 @@
       981626.0,
       981626.0,
       981626.0,
-      981626.0
+      981626.0,
+      943871.0
     ],
-    "predictedPrice": 980345,
-    "predictedRate": -0.1
+    "predictedPrice": 939186,
+    "predictedRate": -0.5
   },
   "實驗樓辦公室": {
     "name": "實驗樓辦公室",
@@ -275,7 +275,6 @@
     "quality": "purple",
     "price": 3232165.0,
     "history": [
-      3124425.0,
       3232165.0,
       3124425.0,
       3124425.0,
@@ -294,9 +293,10 @@
       3124425.0,
       3124425.0,
       3124425.0,
+      3232165.0,
       3232165.0
     ],
-    "predictedPrice": 3238726,
+    "predictedPrice": 3237355,
     "predictedRate": 0.2
   },
   "黑室伺服器室": {
@@ -333,9 +333,8 @@
     "name": "M250通用機槍",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 347329.0,
+    "price": 379399.0,
     "history": [
-      331294.0,
       283189.0,
       320604.0,
       293879.0,
@@ -354,10 +353,11 @@
       272499.0,
       272499.0,
       309914.0,
-      347329.0
+      347329.0,
+      379399.0
     ],
-    "predictedPrice": 353404,
-    "predictedRate": 1.7
+    "predictedPrice": 389237,
+    "predictedRate": 2.6
   },
   "酒店葵扇房": {
     "name": "酒店葵扇房",
@@ -393,9 +393,8 @@
     "name": "Vector擴充CMAG70發",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 115623.0,
+    "price": 144103.0,
     "history": [
-      131643.0,
       145883.0,
       149443.0,
       151223.0,
@@ -414,10 +413,11 @@
       154783.0,
       140543.0,
       149443.0,
-      115623.0
+      115623.0,
+      144103.0
     ],
-    "predictedPrice": 113704,
-    "predictedRate": -1.7
+    "predictedPrice": 145241,
+    "predictedRate": 0.8
   },
   "軍用炮彈": {
     "name": "軍用炮彈",
@@ -543,9 +543,8 @@
     "name": "Hvk-2避彈衣 (破損)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 252889.0,
+    "price": 239919.0,
     "history": [
-      213979.0,
       207494.0,
       213979.0,
       213979.0,
@@ -564,18 +563,18 @@
       239919.0,
       239919.0,
       252889.0,
-      252889.0
+      252889.0,
+      239919.0
     ],
-    "predictedPrice": 254795,
-    "predictedRate": 0.8
+    "predictedPrice": 240257,
+    "predictedRate": 0.1
   },
   "移動電纜": {
     "name": "移動電纜",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 464391.0,
+    "price": 469791.0,
     "history": [
-      453591.0,
       464391.0,
       458991.0,
       445491.0,
@@ -594,18 +593,18 @@
       461691.0,
       461691.0,
       467091.0,
-      464391.0
+      464391.0,
+      469791.0
     ],
-    "predictedPrice": 465481,
-    "predictedRate": 0.2
+    "predictedPrice": 471365,
+    "predictedRate": 0.3
   },
   "幻影後握把": {
     "name": "幻影後握把",
     "category": "交易所物資",
-    "quality": "gold",
-    "price": 122755.0,
+    "quality": "blue",
+    "price": 96055.0,
     "history": [
-      64015.0,
       58675.0,
       60455.0,
       51555.0,
@@ -624,18 +623,18 @@
       99615.0,
       97835.0,
       101395.0,
-      122755.0
+      122755.0,
+      96055.0
     ],
-    "predictedPrice": 129378,
-    "predictedRate": 5.4
+    "predictedPrice": 98733,
+    "predictedRate": 2.8
   },
   "M700先進槍身系統": {
     "name": "M700先進槍身系統",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 121998.0,
+    "price": 123283.0,
     "history": [
-      111718.0,
       104008.0,
       116858.0,
       109148.0,
@@ -654,18 +653,18 @@
       87303.0,
       93728.0,
       89873.0,
-      121998.0
+      121998.0,
+      123283.0
     ],
-    "predictedPrice": 126419,
+    "predictedPrice": 127688,
     "predictedRate": 3.6
   },
   "M700平流層長槍管": {
     "name": "M700平流層長槍管",
     "category": "交易所物資",
-    "quality": "gold",
-    "price": 113003.0,
+    "quality": "blue",
+    "price": 95013.0,
     "history": [
-      123283.0,
       111718.0,
       105293.0,
       97583.0,
@@ -684,18 +683,18 @@
       104008.0,
       104008.0,
       102723.0,
-      113003.0
+      113003.0,
+      95013.0
     ],
-    "predictedPrice": 114661,
-    "predictedRate": 1.5
+    "predictedPrice": 94895,
+    "predictedRate": -0.1
   },
   "高級護甲維修組合": {
     "name": "高級護甲維修組合",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 611820.0,
+    "price": 566500.0,
     "history": [
-      577830.0,
       589160.0,
       600490.0,
       611820.0,
@@ -714,10 +713,11 @@
       577830.0,
       589160.0,
       600490.0,
-      611820.0
+      611820.0,
+      566500.0
     ],
-    "predictedPrice": 615092,
-    "predictedRate": 0.5
+    "predictedPrice": 565140,
+    "predictedRate": -0.2
   },
   "實驗樓資料室": {
     "name": "實驗樓資料室",
@@ -755,7 +755,6 @@
     "quality": "gold",
     "price": 184290.0,
     "history": [
-      157440.0,
       144910.0,
       159230.0,
       148490.0,
@@ -774,18 +773,18 @@
       114480.0,
       114480.0,
       155650.0,
+      184290.0,
       184290.0
     ],
-    "predictedPrice": 191389,
-    "predictedRate": 3.9
+    "predictedPrice": 191070,
+    "predictedRate": 3.7
   },
   "M700獵食軍規槍管": {
     "name": "M700獵食軍規槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 74150.0,
+    "price": 98470.0,
     "history": [
-      80550.0,
       81830.0,
       88230.0,
       92070.0,
@@ -804,10 +803,11 @@
       69030.0,
       70310.0,
       95910.0,
-      74150.0
+      74150.0,
+      98470.0
     ],
-    "predictedPrice": 74669,
-    "predictedRate": 0.7
+    "predictedPrice": 102294,
+    "predictedRate": 3.9
   },
   "1號審訊室": {
     "name": "1號審訊室",
@@ -843,9 +843,8 @@
     "name": "精密頭盔維修包",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 161185.0,
+    "price": 124995.0,
     "history": [
-      157895.0,
       157895.0,
       174345.0,
       128285.0,
@@ -864,18 +863,18 @@
       164475.0,
       144735.0,
       151315.0,
-      161185.0
+      161185.0,
+      124995.0
     ],
-    "predictedPrice": 163977,
-    "predictedRate": 1.7
+    "predictedPrice": 124219,
+    "predictedRate": -0.6
   },
   "GN重型頭盔 (全新)": {
     "name": "GN重型頭盔 (全新)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 405130.0,
+    "price": 418200.0,
     "history": [
-      378990.0,
       411665.0,
       385525.0,
       411665.0,
@@ -894,18 +893,18 @@
       365920.0,
       392060.0,
       392060.0,
-      405130.0
+      405130.0,
+      418200.0
     ],
-    "predictedPrice": 407954,
-    "predictedRate": 0.7
+    "predictedPrice": 422195,
+    "predictedRate": 1.0
   },
   "量子儲存器": {
     "name": "量子儲存器",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 744333.0,
+    "price": 525408.0,
     "history": [
-      671358.0,
       569193.0,
       817308.0,
       656763.0,
@@ -924,18 +923,18 @@
       554598.0,
       729738.0,
       831903.0,
-      744333.0
+      744333.0,
+      525408.0
     ],
-    "predictedPrice": 761226,
-    "predictedRate": 2.3
+    "predictedPrice": 520799,
+    "predictedRate": -0.9
   },
   "衝鋒槍回聲消音器": {
     "name": "衝鋒槍回聲消音器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 51461.0,
+    "price": 49686.0,
     "history": [
-      74536.0,
       62111.0,
       70986.0,
       72761.0,
@@ -954,18 +953,18 @@
       72761.0,
       72761.0,
       51461.0,
-      51461.0
+      51461.0,
+      49686.0
     ],
-    "predictedPrice": 50691,
-    "predictedRate": -1.5
+    "predictedPrice": 48813,
+    "predictedRate": -1.8
   },
   "R93狙擊步槍": {
     "name": "R93狙擊步槍",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 117000.0,
+    "price": 132000.0,
     "history": [
-      141000.0,
       141000.0,
       129000.0,
       114000.0,
@@ -984,18 +983,18 @@
       123000.0,
       129000.0,
       138000.0,
-      117000.0
+      117000.0,
+      132000.0
     ],
-    "predictedPrice": 116655,
-    "predictedRate": -0.3
+    "predictedPrice": 133330,
+    "predictedRate": 1.0
   },
   "AR戰壕標準槍管組合": {
     "name": "AR戰壕標準槍管組合",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 69313.0,
+    "price": 59033.0,
     "history": [
-      57748.0,
       68028.0,
       60318.0,
       65458.0,
@@ -1014,18 +1013,18 @@
       64173.0,
       64173.0,
       53893.0,
-      69313.0
+      69313.0,
+      59033.0
     ],
-    "predictedPrice": 71274,
-    "predictedRate": 2.8
+    "predictedPrice": 59613,
+    "predictedRate": 1.0
   },
   "Mini-14先進槍身系統": {
     "name": "Mini-14先進槍身系統",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 54745.0,
+    "price": 55485.0,
     "history": [
-      56225.0,
       47345.0,
       56965.0,
       53265.0,
@@ -1044,18 +1043,18 @@
       54005.0,
       54005.0,
       54745.0,
-      54745.0
+      54745.0,
+      55485.0
     ],
-    "predictedPrice": 54981,
-    "predictedRate": 0.4
+    "predictedPrice": 55790,
+    "predictedRate": 0.5
   },
   "R93裂變長槍管": {
     "name": "R93裂變長槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 77990.0,
+    "price": 67750.0,
     "history": [
-      75430.0,
       71590.0,
       62630.0,
       69030.0,
@@ -1074,10 +1073,11 @@
       52390.0,
       52390.0,
       71590.0,
-      77990.0
+      77990.0,
+      67750.0
     ],
-    "predictedPrice": 81274,
-    "predictedRate": 4.2
+    "predictedPrice": 69622,
+    "predictedRate": 2.8
   },
   "SVD黑刺超長槍管": {
     "name": "SVD黑刺超長槍管",
@@ -1173,9 +1173,8 @@
     "name": "SMG-45裂變長槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 55570.0,
+    "price": 51450.0,
     "history": [
-      59690.0,
       59690.0,
       57630.0,
       61750.0,
@@ -1194,10 +1193,11 @@
       54540.0,
       43210.0,
       55570.0,
-      55570.0
+      55570.0,
+      51450.0
     ],
-    "predictedPrice": 56200,
-    "predictedRate": 1.1
+    "predictedPrice": 51631,
+    "predictedRate": 0.4
   },
   "武士避彈衣 (全新)": {
     "name": "武士避彈衣 (全新)",
@@ -1233,9 +1233,8 @@
     "name": "共鳴狙擊槍消音器",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 175380.0,
+    "price": 187910.0,
     "history": [
-      191490.0,
       171800.0,
       193280.0,
       170010.0,
@@ -1254,18 +1253,18 @@
       191490.0,
       193280.0,
       186120.0,
-      175380.0
+      175380.0,
+      187910.0
     ],
-    "predictedPrice": 176172,
-    "predictedRate": 0.5
+    "predictedPrice": 190038,
+    "predictedRate": 1.1
   },
   "重型突擊背心 (全新)": {
     "name": "重型突擊背心 (全新)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 547726.0,
+    "price": 568796.0,
     "history": [
-      442376.0,
       442376.0,
       442376.0,
       473981.0,
@@ -1284,10 +1283,11 @@
       473981.0,
       473981.0,
       473981.0,
-      547726.0
+      547726.0,
+      568796.0
     ],
-    "predictedPrice": 553410,
-    "predictedRate": 1.0
+    "predictedPrice": 576160,
+    "predictedRate": 1.3
   },
   "大型電台": {
     "name": "大型電台",
@@ -1323,9 +1323,8 @@
     "name": "M3狙擊鏡",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 66797.0,
+    "price": 78362.0,
     "history": [
-      71937.0,
       70652.0,
       82217.0,
       77077.0,
@@ -1344,10 +1343,11 @@
       66797.0,
       66797.0,
       65512.0,
-      66797.0
+      66797.0,
+      78362.0
     ],
-    "predictedPrice": 65802,
-    "predictedRate": -1.5
+    "predictedPrice": 78563,
+    "predictedRate": 0.3
   },
   "AKM超然長槍管組合": {
     "name": "AKM超然長槍管組合",
@@ -1355,7 +1355,6 @@
     "quality": "blue",
     "price": 51101.0,
     "history": [
-      61341.0,
       69021.0,
       71581.0,
       56221.0,
@@ -1374,9 +1373,10 @@
       52381.0,
       53661.0,
       62621.0,
+      51101.0,
       51101.0
     ],
-    "predictedPrice": 51368,
+    "predictedPrice": 51345,
     "predictedRate": 0.5
   },
   "軍用控制終端": {
@@ -1413,9 +1413,8 @@
     "name": "M14輕語短槍管",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 160111.0,
+    "price": 172571.0,
     "history": [
-      99591.0,
       126291.0,
       90691.0,
       101371.0,
@@ -1434,10 +1433,11 @@
       88911.0,
       90691.0,
       129851.0,
-      160111.0
+      160111.0,
+      172571.0
     ],
-    "predictedPrice": 169607,
-    "predictedRate": 5.9
+    "predictedPrice": 183504,
+    "predictedRate": 6.3
   },
   "5.8新式60發彈鼓": {
     "name": "5.8新式60發彈鼓",
@@ -1475,7 +1475,6 @@
     "quality": "blue",
     "price": 76585.0,
     "history": [
-      86700.0,
       88145.0,
       76585.0,
       85255.0,
@@ -1494,10 +1493,11 @@
       73695.0,
       69360.0,
       69360.0,
+      76585.0,
       76585.0
     ],
-    "predictedPrice": 76602,
-    "predictedRate": 0.0
+    "predictedPrice": 76637,
+    "predictedRate": 0.1
   },
   "GT1戰術頭盔 (全新)": {
     "name": "GT1戰術頭盔 (全新)",
@@ -1560,9 +1560,8 @@
     "name": "AUG槍托墊",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 69599.0,
+    "price": 73469.0,
     "history": [
-      95399.0,
       87659.0,
       96689.0,
       96689.0,
@@ -1581,10 +1580,11 @@
       63149.0,
       73469.0,
       72179.0,
-      69599.0
+      69599.0,
+      73469.0
     ],
-    "predictedPrice": 69087,
-    "predictedRate": -0.7
+    "predictedPrice": 73402,
+    "predictedRate": -0.1
   },
   "奧莉薇婭香檳": {
     "name": "奧莉薇婭香檳",
@@ -1620,9 +1620,8 @@
     "name": "AK12精英腳架長槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 87023.0,
+    "price": 83183.0,
     "history": [
-      92143.0,
       71663.0,
       70383.0,
       79343.0,
@@ -1641,18 +1640,18 @@
       93423.0,
       65263.0,
       85743.0,
-      87023.0
+      87023.0,
+      83183.0
     ],
-    "predictedPrice": 88954,
-    "predictedRate": 2.2
+    "predictedPrice": 84602,
+    "predictedRate": 1.7
   },
   "光學狙擊8倍瞄準鏡": {
     "name": "光學狙擊8倍瞄準鏡",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 49963.0,
+    "price": 55318.0,
     "history": [
-      69598.0,
       64243.0,
       66028.0,
       67813.0,
@@ -1671,10 +1670,11 @@
       48178.0,
       48178.0,
       49963.0,
-      49963.0
+      49963.0,
+      55318.0
     ],
-    "predictedPrice": 49026,
-    "predictedRate": -1.9
+    "predictedPrice": 54942,
+    "predictedRate": -0.7
   },
   "突擊手避彈衣 (全新)": {
     "name": "突擊手避彈衣 (全新)",
@@ -1827,9 +1827,8 @@
     "name": "泰坦消音器",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 190939.0,
+    "price": 198079.0,
     "history": [
-      165949.0,
       144529.0,
       157024.0,
       151669.0,
@@ -1848,10 +1847,11 @@
       167734.0,
       167734.0,
       180229.0,
-      190939.0
+      190939.0,
+      198079.0
     ],
-    "predictedPrice": 194440,
-    "predictedRate": 1.8
+    "predictedPrice": 202247,
+    "predictedRate": 2.1
   },
   "K416突擊步槍": {
     "name": "K416突擊步槍",
@@ -1947,9 +1947,8 @@
     "name": "SCAR-H海狸長槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 51179.0,
+    "price": 67819.0,
     "history": [
-      34539.0,
       44779.0,
       42219.0,
       25579.0,
@@ -1968,18 +1967,18 @@
       29419.0,
       65259.0,
       67819.0,
-      51179.0
+      51179.0,
+      67819.0
     ],
-    "predictedPrice": 56821,
-    "predictedRate": 11.0
+    "predictedPrice": 76932,
+    "predictedRate": 13.4
   },
   "共振二代一體槍托": {
     "name": "共振二代一體槍托",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 140741.0,
+    "price": 179141.0,
     "history": [
-      227781.0,
       222661.0,
       189381.0,
       189381.0,
@@ -1998,10 +1997,11 @@
       135621.0,
       143301.0,
       171461.0,
-      140741.0
+      140741.0,
+      179141.0
     ],
-    "predictedPrice": 139392,
-    "predictedRate": -1.0
+    "predictedPrice": 182543,
+    "predictedRate": 1.9
   },
   "AWM兩腳架": {
     "name": "AWM兩腳架",
@@ -2009,7 +2009,6 @@
     "quality": "blue",
     "price": 48884.0,
     "history": [
-      44804.0,
       47864.0,
       47864.0,
       47864.0,
@@ -2028,18 +2027,18 @@
       44804.0,
       48884.0,
       47864.0,
+      48884.0,
       48884.0
     ],
-    "predictedPrice": 50813,
-    "predictedRate": 3.9
+    "predictedPrice": 50679,
+    "predictedRate": 3.7
   },
   "AR重塔握把": {
     "name": "AR重塔握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 24918.0,
+    "price": 24028.0,
     "history": [
-      23138.0,
       24028.0,
       25808.0,
       23138.0,
@@ -2058,18 +2057,18 @@
       20468.0,
       20468.0,
       24918.0,
-      24918.0
+      24918.0,
+      24028.0
     ],
-    "predictedPrice": 25122,
-    "predictedRate": 0.8
+    "predictedPrice": 24119,
+    "predictedRate": 0.4
   },
   "Mini-14增強槍管": {
     "name": "Mini-14增強槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 35508.0,
+    "price": 31808.0,
     "history": [
-      36248.0,
       41428.0,
       33288.0,
       36988.0,
@@ -2088,10 +2087,11 @@
       31808.0,
       31808.0,
       31808.0,
-      35508.0
+      35508.0,
+      31808.0
     ],
-    "predictedPrice": 35969,
-    "predictedRate": 1.3
+    "predictedPrice": 31865,
+    "predictedRate": 0.2
   },
   "精英避彈衣 (全新)": {
     "name": "精英避彈衣 (全新)",
@@ -2099,7 +2099,6 @@
     "quality": "gold",
     "price": 408090.0,
     "history": [
-      379450.0,
       386610.0,
       393770.0,
       408090.0,
@@ -2118,10 +2117,11 @@
       400930.0,
       400930.0,
       408090.0,
+      408090.0,
       408090.0
     ],
-    "predictedPrice": 408206,
-    "predictedRate": 0.0
+    "predictedPrice": 408025,
+    "predictedRate": -0.0
   },
   "AUG精英腳架長槍管": {
     "name": "AUG精英腳架長槍管",
@@ -2183,9 +2183,8 @@
     "name": "DICH-1戰術頭盔 (全新)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 378201.0,
+    "price": 364191.0,
     "history": [
-      378201.0,
       413226.0,
       357186.0,
       378201.0,
@@ -2204,10 +2203,11 @@
       329166.0,
       350181.0,
       378201.0,
-      378201.0
+      378201.0,
+      364191.0
     ],
-    "predictedPrice": 381309,
-    "predictedRate": 0.8
+    "predictedPrice": 365745,
+    "predictedRate": 0.4
   },
   "3/7可調倍率狙擊鏡": {
     "name": "3/7可調倍率狙擊鏡",
@@ -2273,9 +2273,8 @@
     "name": "重型登山背囊",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 669937.0,
+    "price": 704297.0,
     "history": [
-      700002.0,
       717182.0,
       721477.0,
       669937.0,
@@ -2294,10 +2293,11 @@
       695707.0,
       674232.0,
       669937.0,
-      669937.0
+      669937.0,
+      704297.0
     ],
-    "predictedPrice": 667451,
-    "predictedRate": -0.4
+    "predictedPrice": 705425,
+    "predictedRate": 0.2
   },
   "PBS俄式消音器": {
     "name": "PBS俄式消音器",
@@ -2363,9 +2363,8 @@
     "name": "幻影垂直握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 49743.0,
+    "price": 44403.0,
     "history": [
-      60423.0,
       51523.0,
       53303.0,
       55083.0,
@@ -2384,18 +2383,18 @@
       69323.0,
       69323.0,
       69323.0,
-      49743.0
+      49743.0,
+      44403.0
     ],
-    "predictedPrice": 49644,
-    "predictedRate": -0.2
+    "predictedPrice": 43823,
+    "predictedRate": -1.3
   },
   "體能針": {
     "name": "體能針",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 69515.0,
+    "price": 68295.0,
     "history": [
-      60975.0,
       58535.0,
       62195.0,
       64635.0,
@@ -2414,10 +2413,11 @@
       67075.0,
       71955.0,
       79275.0,
-      69515.0
+      69515.0,
+      68295.0
     ],
-    "predictedPrice": 69878,
-    "predictedRate": 0.5
+    "predictedPrice": 68473,
+    "predictedRate": 0.3
   },
   "Vector導軌槍管組合": {
     "name": "Vector導軌槍管組合",
@@ -2425,7 +2425,6 @@
     "quality": "blue",
     "price": 45638.0,
     "history": [
-      42593.0,
       39548.0,
       42593.0,
       39548.0,
@@ -2444,18 +2443,18 @@
       44623.0,
       45638.0,
       46653.0,
+      45638.0,
       45638.0
     ],
-    "predictedPrice": 46092,
-    "predictedRate": 1.0
+    "predictedPrice": 46052,
+    "predictedRate": 0.9
   },
   "SV-98靈巧短槍管": {
     "name": "SV-98靈巧短槍管",
     "category": "交易所物資",
-    "quality": "blue",
-    "price": 95467.0,
+    "quality": "gold",
+    "price": 104332.0,
     "history": [
-      92512.0,
       97437.0,
       84632.0,
       96452.0,
@@ -2474,18 +2473,18 @@
       93497.0,
       101377.0,
       96452.0,
-      95467.0
+      95467.0,
+      104332.0
     ],
-    "predictedPrice": 95784,
-    "predictedRate": 0.3
+    "predictedPrice": 105598,
+    "predictedRate": 1.2
   },
   "MP5隱蔽短槍管組合": {
     "name": "MP5隱蔽短槍管組合",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 45551.0,
+    "price": 36421.0,
     "history": [
-      43891.0,
       43891.0,
       41401.0,
       38081.0,
@@ -2504,10 +2503,11 @@
       34761.0,
       34761.0,
       43891.0,
-      45551.0
+      45551.0,
+      36421.0
     ],
-    "predictedPrice": 46647,
-    "predictedRate": 2.4
+    "predictedPrice": 36533,
+    "predictedRate": 0.3
   },
   "SVD導軌護木": {
     "name": "SVD導軌護木",
@@ -2603,9 +2603,8 @@
     "name": "AUG實用集成三倍鏡槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 41712.0,
+    "price": 38412.0,
     "history": [
-      39512.0,
       41712.0,
       37312.0,
       40612.0,
@@ -2624,10 +2623,11 @@
       30712.0,
       30712.0,
       39512.0,
-      41712.0
+      41712.0,
+      38412.0
     ],
-    "predictedPrice": 42690,
-    "predictedRate": 2.3
+    "predictedPrice": 38970,
+    "predictedRate": 1.5
   },
   "MK-2戰術背心 (幾乎全新)": {
     "name": "MK-2戰術背心 (幾乎全新)",
@@ -2663,9 +2663,8 @@
     "name": "M1911夜鷹戰術扳機",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 19679.0,
+    "price": 21354.0,
     "history": [
-      21689.0,
       19679.0,
       21019.0,
       22694.0,
@@ -2684,10 +2683,11 @@
       20014.0,
       22024.0,
       19679.0,
-      19679.0
+      19679.0,
+      21354.0
     ],
-    "predictedPrice": 19744,
-    "predictedRate": 0.3
+    "predictedPrice": 21600,
+    "predictedRate": 1.2
   },
   "UR特種戰術槍托": {
     "name": "UR特種戰術槍托",
@@ -2813,9 +2813,8 @@
     "name": "霰彈槍渦流喉縮",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 47396.0,
+    "price": 46001.0,
     "history": [
-      46001.0,
       43211.0,
       43211.0,
       46001.0,
@@ -2834,10 +2833,11 @@
       44606.0,
       44606.0,
       40421.0,
-      47396.0
+      47396.0,
+      46001.0
     ],
-    "predictedPrice": 47972,
-    "predictedRate": 1.2
+    "predictedPrice": 46386,
+    "predictedRate": 0.8
   },
   "加密路由器": {
     "name": "加密路由器",
@@ -2963,9 +2963,8 @@
     "name": "AR加百列長槍管組合",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 54133.0,
+    "price": 47683.0,
     "history": [
-      77353.0,
       67033.0,
       81223.0,
       45103.0,
@@ -2984,18 +2983,18 @@
       61873.0,
       54133.0,
       56713.0,
-      54133.0
+      54133.0,
+      47683.0
     ],
-    "predictedPrice": 54524,
-    "predictedRate": 0.7
+    "predictedPrice": 47449,
+    "predictedRate": -0.5
   },
   "M700狙擊步槍": {
     "name": "M700狙擊步槍",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 117000.0,
+    "price": 138000.0,
     "history": [
-      129000.0,
       138000.0,
       153000.0,
       105000.0,
@@ -3014,10 +3013,11 @@
       141000.0,
       141000.0,
       126000.0,
-      117000.0
+      117000.0,
+      138000.0
     ],
-    "predictedPrice": 116306,
-    "predictedRate": -0.6
+    "predictedPrice": 139604,
+    "predictedRate": 1.2
   },
   "AKM 70發大彈鼓": {
     "name": "AKM 70發大彈鼓",
@@ -3053,9 +3053,8 @@
     "name": "M7實用長槍管組合",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 69189.0,
+    "price": 67414.0,
     "history": [
-      63864.0,
       63864.0,
       65639.0,
       65639.0,
@@ -3074,10 +3073,11 @@
       69189.0,
       62089.0,
       67414.0,
-      69189.0
+      69189.0,
+      67414.0
     ],
-    "predictedPrice": 69527,
-    "predictedRate": 0.5
+    "predictedPrice": 67533,
+    "predictedRate": 0.2
   },
   "雷斯的樂譜本": {
     "name": "雷斯的樂譜本",
@@ -3113,9 +3113,8 @@
     "name": "VSS射手步槍",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 45138.0,
+    "price": 53513.0,
     "history": [
-      53513.0,
       50163.0,
       56863.0,
       50163.0,
@@ -3134,10 +3133,11 @@
       56863.0,
       47781.0,
       46813.0,
-      45138.0
+      45138.0,
+      53513.0
     ],
-    "predictedPrice": 44666,
-    "predictedRate": -1.0
+    "predictedPrice": 53965,
+    "predictedRate": 0.8
   },
   "DT-AVS避彈衣 (破損)": {
     "name": "DT-AVS避彈衣 (破損)",
@@ -3263,9 +3263,8 @@
     "name": "SMG-45竹鼠短槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 47751.0,
+    "price": 42876.0,
     "history": [
-      52626.0,
       67251.0,
       46776.0,
       49701.0,
@@ -3284,10 +3283,11 @@
       42876.0,
       42876.0,
       38001.0,
-      47751.0
+      47751.0,
+      42876.0
     ],
-    "predictedPrice": 48027,
-    "predictedRate": 0.6
+    "predictedPrice": 42662,
+    "predictedRate": -0.5
   },
   "M249海灣短槍管": {
     "name": "M249海灣短槍管",
@@ -3323,9 +3323,8 @@
     "name": "SV-98狙擊步槍",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 74455.0,
+    "price": 77495.0,
     "history": [
-      77495.0,
       83575.0,
       68375.0,
       75975.0,
@@ -3344,10 +3343,11 @@
       72935.0,
       72935.0,
       74455.0,
-      74455.0
+      74455.0,
+      77495.0
     ],
-    "predictedPrice": 74618,
-    "predictedRate": 0.2
+    "predictedPrice": 77963,
+    "predictedRate": 0.6
   },
   "MHS戰術頭盔 (全新)": {
     "name": "MHS戰術頭盔 (全新)",
@@ -3355,7 +3355,6 @@
     "quality": "gold",
     "price": 191443.0,
     "history": [
-      186403.0,
       188923.0,
       191443.0,
       191443.0,
@@ -3374,18 +3373,18 @@
       186403.0,
       188923.0,
       188923.0,
+      191443.0,
       191443.0
     ],
-    "predictedPrice": 191810,
+    "predictedPrice": 191775,
     "predictedRate": 0.2
   },
   "感知強化劑": {
     "name": "感知強化劑",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 69000.0,
+    "price": 57750.0,
     "history": [
-      54750.0,
       53250.0,
       61500.0,
       45000.0,
@@ -3404,18 +3403,18 @@
       50250.0,
       50250.0,
       61500.0,
-      69000.0
+      69000.0,
+      57750.0
     ],
-    "predictedPrice": 71424,
-    "predictedRate": 3.5
+    "predictedPrice": 58725,
+    "predictedRate": 1.7
   },
   "D6戰術頭盔 (全新)": {
     "name": "D6戰術頭盔 (全新)",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 89493.0,
+    "price": 83898.0,
     "history": [
-      91358.0,
       98818.0,
       96953.0,
       87628.0,
@@ -3434,18 +3433,18 @@
       83898.0,
       83898.0,
       83898.0,
-      89493.0
+      89493.0,
+      83898.0
     ],
-    "predictedPrice": 89662,
-    "predictedRate": 0.2
+    "predictedPrice": 83531,
+    "predictedRate": -0.4
   },
   "天蠍座後握把": {
     "name": "天蠍座後握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 90953.0,
+    "price": 92738.0,
     "history": [
-      96308.0,
       108803.0,
       85598.0,
       107018.0,
@@ -3464,18 +3463,18 @@
       94523.0,
       78458.0,
       82028.0,
-      90953.0
+      90953.0,
+      92738.0
     ],
-    "predictedPrice": 91674,
-    "predictedRate": 0.8
+    "predictedPrice": 93582,
+    "predictedRate": 0.9
   },
   "沙鷹膛線長槍管": {
     "name": "沙鷹膛線長槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 17813.0,
+    "price": 18803.0,
     "history": [
-      19793.0,
       18803.0,
       20123.0,
       19133.0,
@@ -3494,10 +3493,11 @@
       13523.0,
       13523.0,
       17153.0,
-      17813.0
+      17813.0,
+      18803.0
     ],
-    "predictedPrice": 18085,
-    "predictedRate": 1.5
+    "predictedPrice": 19188,
+    "predictedRate": 2.0
   },
   "軍用炸藥": {
     "name": "軍用炸藥",
@@ -3743,9 +3743,8 @@
     "name": "M2肌肉注射劑",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 56250.0,
+    "price": 51250.0,
     "history": [
-      58750.0,
       53750.0,
       58750.0,
       50625.0,
@@ -3764,18 +3763,18 @@
       51250.0,
       48750.0,
       54375.0,
-      56250.0
+      56250.0,
+      51250.0
     ],
-    "predictedPrice": 56899,
-    "predictedRate": 1.2
+    "predictedPrice": 51381,
+    "predictedRate": 0.3
   },
   "SVD實用長槍管": {
     "name": "SVD實用長槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 23868.0,
+    "price": 23203.0,
     "history": [
-      22538.0,
       23868.0,
       21873.0,
       23868.0,
@@ -3794,18 +3793,18 @@
       18548.0,
       18548.0,
       23203.0,
-      23868.0
+      23868.0,
+      23203.0
     ],
-    "predictedPrice": 24306,
-    "predictedRate": 1.8
+    "predictedPrice": 23543,
+    "predictedRate": 1.5
   },
   "416穩固槍托": {
     "name": "416穩固槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 24959.0,
+    "price": 29759.0,
     "history": [
-      33599.0,
       28799.0,
       28799.0,
       26879.0,
@@ -3824,10 +3823,11 @@
       31679.0,
       24959.0,
       24959.0,
-      24959.0
+      24959.0,
+      29759.0
     ],
-    "predictedPrice": 24733,
-    "predictedRate": -0.9
+    "predictedPrice": 30089,
+    "predictedRate": 1.1
   },
   "戶外醫療箱": {
     "name": "戶外醫療箱",
@@ -3923,9 +3923,8 @@
     "name": "SCAR-H 30發彈匣",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 46667.0,
+    "price": 49337.0,
     "history": [
-      53342.0,
       52007.0,
       56012.0,
       49337.0,
@@ -3944,18 +3943,18 @@
       38657.0,
       45332.0,
       54677.0,
-      46667.0
+      46667.0,
+      49337.0
     ],
-    "predictedPrice": 47128,
-    "predictedRate": 1.0
+    "predictedPrice": 50102,
+    "predictedRate": 1.6
   },
   "AWM天際線長槍管": {
     "name": "AWM天際線長槍管",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 185087.0,
+    "price": 193987.0,
     "history": [
-      161947.0,
       165507.0,
       188647.0,
       195767.0,
@@ -3974,10 +3973,11 @@
       192207.0,
       181527.0,
       190427.0,
-      185087.0
+      185087.0,
+      193987.0
     ],
-    "predictedPrice": 185345,
-    "predictedRate": 0.1
+    "predictedPrice": 195009,
+    "predictedRate": 0.5
   },
   "MHS戰術頭盔 (破損)": {
     "name": "MHS戰術頭盔 (破損)",
@@ -4013,9 +4013,8 @@
     "name": "通用托腮板",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 18005.0,
+    "price": 17530.0,
     "history": [
-      17055.0,
       18480.0,
       18480.0,
       18480.0,
@@ -4034,10 +4033,11 @@
       13730.0,
       13730.0,
       17530.0,
-      18005.0
+      18005.0,
+      17530.0
     ],
-    "predictedPrice": 18278,
-    "predictedRate": 1.5
+    "predictedPrice": 17731,
+    "predictedRate": 1.1
   },
   "禁區一體槍托": {
     "name": "禁區一體槍托",
@@ -4075,7 +4075,6 @@
     "quality": "blue",
     "price": 30699.0,
     "history": [
-      35819.0,
       30699.0,
       31979.0,
       33259.0,
@@ -4094,10 +4093,11 @@
       26859.0,
       28139.0,
       33259.0,
+      30699.0,
       30699.0
     ],
-    "predictedPrice": 31240,
-    "predictedRate": 1.8
+    "predictedPrice": 31224,
+    "predictedRate": 1.7
   },
   "AKM實用標準槍管組合": {
     "name": "AKM實用標準槍管組合",
@@ -4163,9 +4163,8 @@
     "name": "SMG長弩超長槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 42868.0,
+    "price": 31168.0,
     "history": [
-      46768.0,
       40918.0,
       35068.0,
       52618.0,
@@ -4184,10 +4183,11 @@
       44818.0,
       50668.0,
       42868.0,
-      42868.0
+      42868.0,
+      31168.0
     ],
-    "predictedPrice": 43145,
-    "predictedRate": 0.6
+    "predictedPrice": 30492,
+    "predictedRate": -2.2
   },
   "射手D-2後握把": {
     "name": "射手D-2後握把",
@@ -4253,9 +4253,8 @@
     "name": "M700穩定一體槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 33025.0,
+    "price": 34495.0,
     "history": [
-      33025.0,
       33760.0,
       34495.0,
       33025.0,
@@ -4274,10 +4273,11 @@
       29350.0,
       29350.0,
       31555.0,
-      33025.0
+      33025.0,
+      34495.0
     ],
-    "predictedPrice": 33081,
-    "predictedRate": 0.2
+    "predictedPrice": 34702,
+    "predictedRate": 0.6
   },
   "強襲戰術背心": {
     "name": "強襲戰術背心",
@@ -4613,9 +4613,8 @@
     "name": "M250侍衞短槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 51683.0,
+    "price": 48113.0,
     "history": [
-      42758.0,
       48113.0,
       39188.0,
       37403.0,
@@ -4634,18 +4633,18 @@
       51683.0,
       48113.0,
       48113.0,
-      51683.0
+      51683.0,
+      48113.0
     ],
-    "predictedPrice": 52488,
-    "predictedRate": 1.6
+    "predictedPrice": 48452,
+    "predictedRate": 0.7
   },
   "MRGS鏤空槍托": {
     "name": "MRGS鏤空槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 51464.0,
+    "price": 49689.0,
     "history": [
-      49689.0,
       44364.0,
       49689.0,
       47914.0,
@@ -4664,18 +4663,18 @@
       51464.0,
       47914.0,
       47914.0,
-      51464.0
+      51464.0,
+      49689.0
     ],
-    "predictedPrice": 51792,
-    "predictedRate": 0.6
+    "predictedPrice": 49816,
+    "predictedRate": 0.3
   },
   "野戰徒步背囊": {
     "name": "野戰徒步背囊",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 52815.0,
+    "price": 51690.0,
     "history": [
-      55065.0,
       57315.0,
       53940.0,
       53940.0,
@@ -4694,10 +4693,11 @@
       53940.0,
       53940.0,
       52815.0,
-      52815.0
+      52815.0,
+      51690.0
     ],
-    "predictedPrice": 52834,
-    "predictedRate": 0.0
+    "predictedPrice": 51594,
+    "predictedRate": -0.2
   },
   "收音機": {
     "name": "收音機",
@@ -4763,9 +4763,8 @@
     "name": "SV98兩腳架",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 9058.0,
+    "price": 8813.0,
     "history": [
-      9058.0,
       7343.0,
       8813.0,
       9303.0,
@@ -4784,10 +4783,11 @@
       7098.0,
       7098.0,
       8568.0,
-      9058.0
+      9058.0,
+      8813.0
     ],
-    "predictedPrice": 9226,
-    "predictedRate": 1.9
+    "predictedPrice": 8947,
+    "predictedRate": 1.5
   },
   "血氧機": {
     "name": "血氧機",
@@ -4848,9 +4848,8 @@
     "name": "M7 30發6.8彈匣",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 28601.0,
+    "price": 27576.0,
     "history": [
-      30651.0,
       30651.0,
       31676.0,
       31676.0,
@@ -4869,10 +4868,11 @@
       28601.0,
       28601.0,
       28601.0,
-      28601.0
+      28601.0,
+      27576.0
     ],
-    "predictedPrice": 28494,
-    "predictedRate": -0.4
+    "predictedPrice": 27382,
+    "predictedRate": -0.7
   },
   "MP7增強槍管組合": {
     "name": "MP7增強槍管組合",
@@ -4938,9 +4938,8 @@
     "name": "MK-2戰術背心 (破損)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 118344.0,
+    "price": 112424.0,
     "history": [
-      112424.0,
       118344.0,
       118344.0,
       121304.0,
@@ -4959,10 +4958,11 @@
       112424.0,
       112424.0,
       115384.0,
-      118344.0
+      118344.0,
+      112424.0
     ],
-    "predictedPrice": 118687,
-    "predictedRate": 0.3
+    "predictedPrice": 112145,
+    "predictedRate": -0.2
   },
   "斜角阻手器": {
     "name": "斜角阻手器",
@@ -5028,9 +5028,8 @@
     "name": "沙鷹競技後握",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 8441.0,
+    "price": 8941.0,
     "history": [
-      9441.0,
       8691.0,
       9191.0,
       9191.0,
@@ -5049,18 +5048,18 @@
       9191.0,
       6941.0,
       6941.0,
-      8441.0
+      8441.0,
+      8941.0
     ],
-    "predictedPrice": 8476,
-    "predictedRate": 0.4
+    "predictedPrice": 9032,
+    "predictedRate": 1.0
   },
   "SVD聚合物一體槍托": {
     "name": "SVD聚合物一體槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 46022.0,
+    "price": 47337.0,
     "history": [
-      46022.0,
       48652.0,
       43392.0,
       44707.0,
@@ -5079,10 +5078,11 @@
       39447.0,
       39447.0,
       43392.0,
-      46022.0
+      46022.0,
+      47337.0
     ],
-    "predictedPrice": 46222,
-    "predictedRate": 0.4
+    "predictedPrice": 47666,
+    "predictedRate": 0.7
   },
   "M249軍規導軌護木": {
     "name": "M249軍規導軌護木",
@@ -5148,9 +5148,8 @@
     "name": "AKM海狸長槍管組合",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 22947.0,
+    "price": 24227.0,
     "history": [
-      29347.0,
       26787.0,
       25507.0,
       42147.0,
@@ -5169,10 +5168,11 @@
       33187.0,
       28067.0,
       39587.0,
-      22947.0
+      22947.0,
+      24227.0
     ],
-    "predictedPrice": 23853,
-    "predictedRate": 3.9
+    "predictedPrice": 25222,
+    "predictedRate": 4.1
   },
   "AK12前線長槍管": {
     "name": "AK12前線長槍管",
@@ -5298,9 +5298,8 @@
     "name": "M1911夜鷹戰術擊錘",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 19679.0,
+    "price": 21019.0,
     "history": [
-      21354.0,
       21689.0,
       18674.0,
       20014.0,
@@ -5319,10 +5318,11 @@
       20349.0,
       20349.0,
       20684.0,
-      19679.0
+      19679.0,
+      21019.0
     ],
-    "predictedPrice": 19607,
-    "predictedRate": -0.4
+    "predictedPrice": 21089,
+    "predictedRate": 0.3
   },
   "固態硬碟": {
     "name": "固態硬碟",
@@ -5388,9 +5388,8 @@
     "name": "HMP特勤避彈衣 (幾乎全新)",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 97630.0,
+    "price": 93190.0,
     "history": [
-      104290.0,
       99850.0,
       86530.0,
       97630.0,
@@ -5409,10 +5408,11 @@
       97630.0,
       97630.0,
       99850.0,
-      97630.0
+      97630.0,
+      93190.0
     ],
-    "predictedPrice": 97663,
-    "predictedRate": 0.0
+    "predictedPrice": 92815,
+    "predictedRate": -0.4
   },
   "AKM實用長槍管組合": {
     "name": "AKM實用長槍管組合",
@@ -5478,9 +5478,8 @@
     "name": "OLIGHT Odin S戰術手電筒",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 54177.0,
+    "price": 41667.0,
     "history": [
-      39582.0,
       41667.0,
       52092.0,
       50007.0,
@@ -5499,10 +5498,11 @@
       52092.0,
       39582.0,
       52092.0,
-      54177.0
+      54177.0,
+      41667.0
     ],
-    "predictedPrice": 55724,
-    "predictedRate": 2.9
+    "predictedPrice": 41776,
+    "predictedRate": 0.3
   },
   "專業音效卡": {
     "name": "專業音效卡",
@@ -5729,9 +5729,8 @@
     "name": ".357左輪逐風者槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 20664.0,
+    "price": 20399.0,
     "history": [
-      20134.0,
       20664.0,
       20399.0,
       20664.0,
@@ -5750,10 +5749,11 @@
       19604.0,
       19604.0,
       20134.0,
-      20664.0
+      20664.0,
+      20399.0
     ],
-    "predictedPrice": 20716,
-    "predictedRate": 0.3
+    "predictedPrice": 20421,
+    "predictedRate": 0.1
   },
   "M14先進槍身系統": {
     "name": "M14先進槍身系統",
@@ -5789,9 +5789,8 @@
     "name": "K416A8長槍管組合",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 26723.0,
+    "price": 28508.0,
     "history": [
-      26723.0,
       28508.0,
       33863.0,
       26723.0,
@@ -5810,18 +5809,18 @@
       33863.0,
       32078.0,
       28508.0,
-      26723.0
+      26723.0,
+      28508.0
     ],
-    "predictedPrice": 26478,
-    "predictedRate": -0.9
+    "predictedPrice": 28403,
+    "predictedRate": -0.4
   },
   "鈦金競賽制退器": {
     "name": "鈦金競賽制退器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 55332.0,
+    "price": 26772.0,
     "history": [
-      44622.0,
       30342.0,
       37482.0,
       35697.0,
@@ -5840,18 +5839,18 @@
       26772.0,
       26772.0,
       24987.0,
-      55332.0
+      55332.0,
+      26772.0
     ],
-    "predictedPrice": 61504,
-    "predictedRate": 11.2
+    "predictedPrice": 28262,
+    "predictedRate": 5.6
   },
   "泰坦補償器": {
     "name": "泰坦補償器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 51599.0,
+    "price": 62279.0,
     "history": [
-      26679.0,
       30239.0,
       28459.0,
       49819.0,
@@ -5870,18 +5869,18 @@
       53379.0,
       53379.0,
       30239.0,
-      51599.0
+      51599.0,
+      62279.0
     ],
-    "predictedPrice": 57089,
-    "predictedRate": 10.6
+    "predictedPrice": 69629,
+    "predictedRate": 11.8
   },
   "MP7平衡後握把": {
     "name": "MP7平衡後握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 51551.0,
+    "price": 83591.0,
     "history": [
-      42651.0,
       49771.0,
       44431.0,
       47991.0,
@@ -5900,18 +5899,18 @@
       60451.0,
       60451.0,
       51551.0,
-      51551.0
+      51551.0,
+      83591.0
     ],
-    "predictedPrice": 51715,
-    "predictedRate": 0.3
+    "predictedPrice": 88917,
+    "predictedRate": 6.4
   },
   "影襲托芯槍托": {
     "name": "影襲托芯槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 42718.0,
+    "price": 32038.0,
     "history": [
-      32038.0,
       35598.0,
       30258.0,
       35598.0,
@@ -5930,10 +5929,11 @@
       28478.0,
       28478.0,
       30258.0,
-      42718.0
+      42718.0,
+      32038.0
     ],
-    "predictedPrice": 44724,
-    "predictedRate": 4.7
+    "predictedPrice": 32640,
+    "predictedRate": 1.9
   },
   "MP7穩固後握把": {
     "name": "MP7穩固後握把",
@@ -6220,9 +6220,8 @@
     "name": "微型瞄準器增高架",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 18135.0,
+    "price": 23335.0,
     "history": [
-      19110.0,
       18460.0,
       19435.0,
       21060.0,
@@ -6241,10 +6240,11 @@
       19760.0,
       21060.0,
       18135.0,
-      18135.0
+      18135.0,
+      23335.0
     ],
-    "predictedPrice": 18084,
-    "predictedRate": -0.3
+    "predictedPrice": 23933,
+    "predictedRate": 2.6
   },
   "多用途戰術增高架": {
     "name": "多用途戰術增高架",
@@ -6750,9 +6750,8 @@
     "name": "PKM擴充彈箱",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 26844.0,
+    "price": 37084.0,
     "history": [
-      24284.0,
       28124.0,
       29404.0,
       35804.0,
@@ -6771,18 +6770,18 @@
       26844.0,
       26844.0,
       26844.0,
-      26844.0
+      26844.0,
+      37084.0
     ],
-    "predictedPrice": 26405,
-    "predictedRate": -1.6
+    "predictedPrice": 37857,
+    "predictedRate": 2.1
   },
   "R93輕盈短槍管": {
     "name": "R93輕盈短槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 43430.0,
+    "price": 49830.0,
     "history": [
-      51110.0,
       51110.0,
       40870.0,
       45990.0,
@@ -6801,10 +6800,11 @@
       33190.0,
       44710.0,
       47270.0,
-      43430.0
+      43430.0,
+      49830.0
     ],
-    "predictedPrice": 44212,
-    "predictedRate": 1.8
+    "predictedPrice": 51449,
+    "predictedRate": 3.2
   },
   "SCAR-H 50發彈鼓": {
     "name": "SCAR-H 50發彈鼓",
@@ -7153,9 +7153,8 @@
     "name": "骨架狙擊槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 37313.0,
+    "price": 39923.0,
     "history": [
-      38183.0,
       39923.0,
       39923.0,
       43403.0,
@@ -7174,10 +7173,11 @@
       35573.0,
       39923.0,
       42533.0,
-      37313.0
+      37313.0,
+      39923.0
     ],
-    "predictedPrice": 37499,
-    "predictedRate": 0.5
+    "predictedPrice": 40380,
+    "predictedRate": 1.1
   },
   "雨林獵人背囊": {
     "name": "雨林獵人背囊",
@@ -7243,9 +7243,8 @@
     "name": "SG552 45發擴充彈匣",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 58575.0,
+    "price": 54450.0,
     "history": [
-      54450.0,
       53625.0,
       60225.0,
       61875.0,
@@ -7264,10 +7263,11 @@
       51150.0,
       51150.0,
       56100.0,
-      58575.0
+      58575.0,
+      54450.0
     ],
-    "predictedPrice": 59124,
-    "predictedRate": 0.9
+    "predictedPrice": 54534,
+    "predictedRate": 0.2
   },
   "全息二型瞄準鏡": {
     "name": "全息二型瞄準鏡",
@@ -7746,10 +7746,9 @@
   "三角洲部隊：黑鷹墜落-戰隊之刃": {
     "name": "三角洲部隊：黑鷹墜落-戰隊之刃",
     "category": "交易所物資",
-    "quality": "blue",
-    "price": 12982.0,
+    "quality": "gold",
+    "price": 117982.0,
     "history": [
-      10462.0,
       9622.0,
       9622.0,
       9202.0,
@@ -7768,10 +7767,11 @@
       10462.0,
       10462.0,
       10462.0,
-      12982.0
+      12982.0,
+      117982.0
     ],
-    "predictedPrice": 13294,
-    "predictedRate": 2.4
+    "predictedPrice": 216079,
+    "predictedRate": 83.1
   },
   "5.56x45mm M995": {
     "name": "5.56x45mm M995",
@@ -8346,7 +8346,6 @@
     "price": 4927249.0,
     "history": [
       3394319.0,
-      3394319.0,
       3722804.0,
       3175329.0,
       3503814.0,
@@ -8364,10 +8363,11 @@
       3613309.0,
       3613309.0,
       4927249.0,
+      4927249.0,
       4927249.0
     ],
-    "predictedPrice": 5121915,
-    "predictedRate": 4.0
+    "predictedPrice": 5107004,
+    "predictedRate": 3.6
   },
   "H70精英頭盔 (破損)": {
     "name": "H70精英頭盔 (破損)",
@@ -8433,9 +8433,8 @@
     "name": "克勞迪烏斯半身像",
     "category": "交易所物資",
     "quality": "purple",
-    "price": 3714428.0,
+    "price": 3250118.0,
     "history": [
-      3316448.0,
       3449108.0,
       3183788.0,
       3117458.0,
@@ -8454,10 +8453,11 @@
       3250118.0,
       3515438.0,
       3714428.0,
-      3714428.0
+      3714428.0,
+      3250118.0
     ],
-    "predictedPrice": 3760199,
-    "predictedRate": 1.2
+    "predictedPrice": 3246708,
+    "predictedRate": -0.1
   },
   "AWM狙擊步槍": {
     "name": "AWM狙擊步槍",
@@ -8613,7 +8613,7 @@
     "name": "Vector共振一體式槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 49761.0,
+    "price": 46206.0,
     "history": [
       53316.0,
       53316.0,
@@ -8622,7 +8622,6 @@
       53316.0,
       53316.0,
       53316.0,
-      53316.0,
       49761.0,
       49761.0,
       46206.0,
@@ -8634,19 +8633,19 @@
       49761.0,
       49761.0,
       49761.0,
-      49761.0
+      49761.0,
+      46206.0
     ],
-    "predictedPrice": 49696,
-    "predictedRate": -0.1
+    "predictedPrice": 45831,
+    "predictedRate": -0.8
   },
   "舊浴場貴賓室": {
     "name": "舊浴場貴賓室",
     "category": "交易所物資",
     "quality": "purple",
-    "price": 1465034.0,
+    "price": 1513869.0,
     "history": [
       1513869.0,
-      1513869.0,
       1562704.0,
       1562704.0,
       1513869.0,
@@ -8664,10 +8663,11 @@
       1513869.0,
       1513869.0,
       1562704.0,
-      1465034.0
+      1465034.0,
+      1513869.0
     ],
-    "predictedPrice": 1461422,
-    "predictedRate": -0.2
+    "predictedPrice": 1515390,
+    "predictedRate": 0.1
   },
   "雷達站控制室": {
     "name": "雷達站控制室",
@@ -8853,9 +8853,8 @@
     "name": "M14導軌一體槍托",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 105858.0,
+    "price": 104518.0,
     "history": [
-      116578.0,
       111218.0,
       105858.0,
       121938.0,
@@ -8874,10 +8873,11 @@
       103178.0,
       103178.0,
       88438.0,
-      105858.0
+      105858.0,
+      104518.0
     ],
-    "predictedPrice": 106900,
-    "predictedRate": 1.0
+    "predictedPrice": 105350,
+    "predictedRate": 0.8
   },
   "浮力室醫務間": {
     "name": "浮力室醫務間",
@@ -8943,9 +8943,8 @@
     "name": "戰地醫療箱",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 204021.0,
+    "price": 212526.0,
     "history": [
-      198351.0,
       223866.0,
       221031.0,
       209691.0,
@@ -8964,10 +8963,11 @@
       175671.0,
       201186.0,
       215361.0,
-      204021.0
+      204021.0,
+      212526.0
     ],
-    "predictedPrice": 204842,
-    "predictedRate": 0.4
+    "predictedPrice": 214163,
+    "predictedRate": 0.8
   },
   "K416特勤短槍管組合": {
     "name": "K416特勤短槍管組合",
@@ -9063,9 +9063,8 @@
     "name": "腦機控制端",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 125954.0,
+    "price": 122954.0,
     "history": [
-      95954.0,
       86954.0,
       80954.0,
       95954.0,
@@ -9084,10 +9083,11 @@
       98954.0,
       77954.0,
       95954.0,
-      125954.0
+      125954.0,
+      122954.0
     ],
-    "predictedPrice": 132347,
-    "predictedRate": 5.1
+    "predictedPrice": 128530,
+    "predictedRate": 4.5
   },
   "E型濾毒罐": {
     "name": "E型濾毒罐",
@@ -9213,9 +9213,8 @@
     "name": "便攜喇叭",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 36452.0,
+    "price": 34627.0,
     "history": [
-      34627.0,
       30977.0,
       29152.0,
       30977.0,
@@ -9234,18 +9233,18 @@
       32802.0,
       32802.0,
       29152.0,
-      36452.0
+      36452.0,
+      34627.0
     ],
-    "predictedPrice": 37174,
-    "predictedRate": 2.0
+    "predictedPrice": 35111,
+    "predictedRate": 1.4
   },
   "重型突擊背心 (幾乎全新)": {
     "name": "重型突擊背心 (幾乎全新)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 367070.0,
+    "price": 349160.0,
     "history": [
-      340205.0,
       322295.0,
       331250.0,
       340205.0,
@@ -9264,18 +9263,18 @@
       376025.0,
       376025.0,
       376025.0,
-      367070.0
+      367070.0,
+      349160.0
     ],
-    "predictedPrice": 367781,
-    "predictedRate": 0.2
+    "predictedPrice": 347965,
+    "predictedRate": -0.3
   },
   "ASh-12 CQB短槍管": {
     "name": "ASh-12 CQB短槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 48051.0,
+    "price": 51611.0,
     "history": [
-      40931.0,
       28471.0,
       30251.0,
       26691.0,
@@ -9294,10 +9293,11 @@
       51611.0,
       49831.0,
       46271.0,
-      48051.0
+      48051.0,
+      51611.0
     ],
-    "predictedPrice": 50160,
-    "predictedRate": 4.4
+    "predictedPrice": 54120,
+    "predictedRate": 4.9
   },
   "已損壞的熱像儀": {
     "name": "已損壞的熱像儀",
@@ -9363,9 +9363,8 @@
     "name": "SR-25瞬息短槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 87381.0,
+    "price": 94521.0,
     "history": [
-      82026.0,
       92736.0,
       101661.0,
       99876.0,
@@ -9384,18 +9383,18 @@
       110586.0,
       110586.0,
       87381.0,
-      87381.0
+      87381.0,
+      94521.0
     ],
-    "predictedPrice": 86809,
-    "predictedRate": -0.7
+    "predictedPrice": 94555,
+    "predictedRate": 0.0
   },
   "M14射手步槍": {
     "name": "M14射手步槍",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 342850.0,
+    "price": 284825.0,
     "history": [
-      158225.0,
       137125.0,
       221525.0,
       158225.0,
@@ -9414,10 +9413,11 @@
       284825.0,
       284825.0,
       253175.0,
-      342850.0
+      342850.0,
+      284825.0
     ],
-    "predictedPrice": 367282,
-    "predictedRate": 7.1
+    "predictedPrice": 298509,
+    "predictedRate": 4.8
   },
   "M249導軌護木": {
     "name": "M249導軌護木",
@@ -9453,9 +9453,8 @@
     "name": "賽伊德的手弩",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 114874.0,
+    "price": 132554.0,
     "history": [
-      106034.0,
       101614.0,
       106034.0,
       119294.0,
@@ -9474,10 +9473,11 @@
       128134.0,
       106034.0,
       114874.0,
-      114874.0
+      114874.0,
+      132554.0
     ],
-    "predictedPrice": 116731,
-    "predictedRate": 1.6
+    "predictedPrice": 136559,
+    "predictedRate": 3.0
   },
   "啤牌-7": {
     "name": "啤牌-7",
@@ -9500,9 +9500,8 @@
     "name": "PERST-7藍色激光鐳指",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 31757.0,
+    "price": 33687.0,
     "history": [
-      36582.0,
       32722.0,
       31757.0,
       31757.0,
@@ -9521,10 +9520,11 @@
       33687.0,
       24037.0,
       25967.0,
-      31757.0
+      31757.0,
+      33687.0
     ],
-    "predictedPrice": 31935,
-    "predictedRate": 0.6
+    "predictedPrice": 34086,
+    "predictedRate": 1.2
   },
   "咖啡": {
     "name": "咖啡",
@@ -9586,9 +9586,8 @@
     "name": "MP7蜂刺長槍管組合",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 67931.0,
+    "price": 87621.0,
     "history": [
-      51821.0,
       50031.0,
       51821.0,
       51821.0,
@@ -9607,18 +9606,18 @@
       62561.0,
       62561.0,
       67931.0,
-      67931.0
+      67931.0,
+      87621.0
     ],
-    "predictedPrice": 68981,
-    "predictedRate": 1.5
+    "predictedPrice": 91255,
+    "predictedRate": 4.1
   },
   "SR-25追風長槍管": {
     "name": "SR-25追風長槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 50104.0,
+    "price": 51894.0,
     "history": [
-      51894.0,
       51894.0,
       69794.0,
       57264.0,
@@ -9637,10 +9636,11 @@
       55474.0,
       55474.0,
       51894.0,
-      50104.0
+      50104.0,
+      51894.0
     ],
-    "predictedPrice": 49892,
-    "predictedRate": -0.4
+    "predictedPrice": 51846,
+    "predictedRate": -0.1
   },
   ".357左輪逐風者後握把": {
     "name": ".357左輪逐風者後握把",
@@ -9736,9 +9736,8 @@
     "name": "P90重攻長槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 57983.0,
+    "price": 67013.0,
     "history": [
-      72173.0,
       61853.0,
       60563.0,
       70883.0,
@@ -9757,10 +9756,11 @@
       57983.0,
       63143.0,
       57983.0,
-      57983.0
+      57983.0,
+      67013.0
     ],
-    "predictedPrice": 58330,
-    "predictedRate": 0.6
+    "predictedPrice": 68485,
+    "predictedRate": 2.2
   },
   "SR-3M隱擊消音器": {
     "name": "SR-3M隱擊消音器",
@@ -9826,9 +9826,8 @@
     "name": "耀斑戰術手電筒",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 54177.0,
+    "price": 41667.0,
     "history": [
-      39582.0,
       47922.0,
       52092.0,
       41667.0,
@@ -9847,10 +9846,11 @@
       45837.0,
       47922.0,
       43752.0,
-      54177.0
+      54177.0,
+      41667.0
     ],
-    "predictedPrice": 55913,
-    "predictedRate": 3.2
+    "predictedPrice": 41903,
+    "predictedRate": 0.6
   },
   "戰術三角握把": {
     "name": "戰術三角握把",
@@ -9948,7 +9948,6 @@
     "quality": "blue",
     "price": 51713.0,
     "history": [
-      85628.0,
       82058.0,
       65993.0,
       60638.0,
@@ -9967,10 +9966,11 @@
       65993.0,
       51713.0,
       51713.0,
+      51713.0,
       51713.0
     ],
-    "predictedPrice": 50688,
-    "predictedRate": -2.0
+    "predictedPrice": 50775,
+    "predictedRate": -1.8
   },
   "勇士衝鋒槍": {
     "name": "勇士衝鋒槍",
@@ -10298,9 +10298,8 @@
     "name": "漩渦消焰器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 24929.0,
+    "price": 36449.0,
     "history": [
-      24929.0,
       23969.0,
       23969.0,
       24929.0,
@@ -10319,10 +10318,11 @@
       23009.0,
       23009.0,
       24929.0,
-      24929.0
+      24929.0,
+      36449.0
     ],
-    "predictedPrice": 25029,
-    "predictedRate": 0.4
+    "predictedPrice": 38276,
+    "predictedRate": 5.0
   },
   "HT戰術背心 (幾乎全新)": {
     "name": "HT戰術背心 (幾乎全新)",
@@ -10402,9 +10402,8 @@
     "name": "骨鋸",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 15426.0,
+    "price": 16201.0,
     "history": [
-      16976.0,
       17751.0,
       20076.0,
       17751.0,
@@ -10423,10 +10422,11 @@
       17751.0,
       17751.0,
       18526.0,
-      15426.0
+      15426.0,
+      16201.0
     ],
-    "predictedPrice": 15306,
-    "predictedRate": -0.8
+    "predictedPrice": 16146,
+    "predictedRate": -0.3
   },
   "M700軍規護木": {
     "name": "M700軍規護木",
@@ -10609,9 +10609,8 @@
     "name": "12.7x55mm PS12B",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 11983.0,
+    "price": 11803.0,
     "history": [
-      10363.0,
       10183.0,
       9823.0,
       9643.0,
@@ -10630,10 +10629,11 @@
       8743.0,
       8743.0,
       10903.0,
-      11983.0
+      11983.0,
+      11803.0
     ],
-    "predictedPrice": 12319,
-    "predictedRate": 2.8
+    "predictedPrice": 12103,
+    "predictedRate": 2.5
   },
   "DRO戰術頭盔 (幾乎全新)": {
     "name": "DRO戰術頭盔 (幾乎全新)",
@@ -10691,10 +10691,9 @@
     "name": "旅店用餐間",
     "category": "交易所物資",
     "quality": "purple",
-    "price": 2037999.0,
+    "price": 2099759.0,
     "history": [
       1914479.0,
-      1914479.0,
       2037999.0,
       1976239.0,
       1976239.0,
@@ -10712,10 +10711,11 @@
       2037999.0,
       2037999.0,
       2037999.0,
-      2037999.0
+      2037999.0,
+      2099759.0
     ],
-    "predictedPrice": 2042357,
-    "predictedRate": 0.2
+    "predictedPrice": 2109805,
+    "predictedRate": 0.5
   },
   "掃拖一體機械人": {
     "name": "掃拖一體機械人",
@@ -10783,7 +10783,6 @@
     "quality": "blue",
     "price": 82158.0,
     "history": [
-      136958.0,
       112983.0,
       147233.0,
       130108.0,
@@ -10802,18 +10801,18 @@
       85583.0,
       78733.0,
       78733.0,
+      82158.0,
       82158.0
     ],
-    "predictedPrice": 80297,
-    "predictedRate": -2.3
+    "predictedPrice": 80468,
+    "predictedRate": -2.1
   },
   "M7堤風超長槍管組合": {
     "name": "M7堤風超長槍管組合",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 277422.0,
+    "price": 224922.0,
     "history": [
-      187422.0,
       236172.0,
       232422.0,
       209922.0,
@@ -10832,18 +10831,18 @@
       251172.0,
       251172.0,
       247422.0,
-      277422.0
+      277422.0,
+      224922.0
     ],
-    "predictedPrice": 283680,
-    "predictedRate": 2.3
+    "predictedPrice": 225141,
+    "predictedRate": 0.1
   },
   "西翼控制室": {
     "name": "西翼控制室",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 632206.0,
+    "price": 677366.0,
     "history": [
-      677366.0,
       722526.0,
       722526.0,
       722526.0,
@@ -10862,10 +10861,11 @@
       722526.0,
       722526.0,
       632206.0,
-      632206.0
+      632206.0,
+      677366.0
     ],
-    "predictedPrice": 627575,
-    "predictedRate": -0.7
+    "predictedPrice": 677355,
+    "predictedRate": -0.0
   },
   "DT-AVS避彈衣 (全新)": {
     "name": "DT-AVS避彈衣 (全新)",
@@ -10931,9 +10931,8 @@
     "name": "FS複合避彈衣 (全新)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 456593.0,
+    "price": 484553.0,
     "history": [
-      400673.0,
       409993.0,
       409993.0,
       465913.0,
@@ -10952,10 +10951,11 @@
       409993.0,
       475233.0,
       484553.0,
-      456593.0
+      456593.0,
+      484553.0
     ],
-    "predictedPrice": 458133,
-    "predictedRate": 0.3
+    "predictedPrice": 488717,
+    "predictedRate": 0.9
   },
   "雷達側門門卡": {
     "name": "雷達側門門卡",
@@ -10991,9 +10991,8 @@
     "name": "高級頭盔維修組合",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 978640.0,
+    "price": 696340.0,
     "history": [
-      583420.0,
       564600.0,
       461090.0,
       517550.0,
@@ -11012,10 +11011,11 @@
       536370.0,
       517550.0,
       517550.0,
-      978640.0
+      978640.0,
+      696340.0
     ],
-    "predictedPrice": 1065653,
-    "predictedRate": 8.9
+    "predictedPrice": 734995,
+    "predictedRate": 5.6
   },
   "啤牌-9": {
     "name": "啤牌-9",
@@ -11171,9 +11171,8 @@
     "name": "M14 30發彈匣",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 58887.0,
+    "price": 72287.0,
     "history": [
-      45487.0,
       52187.0,
       65587.0,
       50847.0,
@@ -11192,18 +11191,18 @@
       50847.0,
       42807.0,
       48167.0,
-      58887.0
+      58887.0,
+      72287.0
     ],
-    "predictedPrice": 60689,
-    "predictedRate": 3.1
+    "predictedPrice": 75881,
+    "predictedRate": 5.0
   },
   "Mask-1鐵壁頭盔 (幾乎全新)": {
     "name": "Mask-1鐵壁頭盔 (幾乎全新)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 148486.0,
+    "price": 160531.0,
     "history": [
-      152501.0,
       156516.0,
       144471.0,
       160531.0,
@@ -11222,18 +11221,18 @@
       176591.0,
       176591.0,
       152501.0,
-      148486.0
+      148486.0,
+      160531.0
     ],
-    "predictedPrice": 148444,
-    "predictedRate": -0.0
+    "predictedPrice": 161748,
+    "predictedRate": 0.8
   },
   "PT3死士槍托": {
     "name": "PT3死士槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 73315.0,
+    "price": 41095.0,
     "history": [
-      55415.0,
       44675.0,
       33935.0,
       30355.0,
@@ -11252,10 +11251,11 @@
       57205.0,
       46465.0,
       26775.0,
-      73315.0
+      73315.0,
+      41095.0
     ],
-    "predictedPrice": 89063,
-    "predictedRate": 21.5
+    "predictedPrice": 47622,
+    "predictedRate": 15.9
   },
   "影襲導軌槍托": {
     "name": "影襲導軌槍托",
@@ -11263,7 +11263,6 @@
     "quality": "blue",
     "price": 51823.0,
     "history": [
-      50033.0,
       51823.0,
       48243.0,
       50033.0,
@@ -11282,9 +11281,10 @@
       51823.0,
       51823.0,
       51823.0,
+      51823.0,
       51823.0
     ],
-    "predictedPrice": 51933,
+    "predictedPrice": 51922,
     "predictedRate": 0.2
   },
   "AUG 60發": {
@@ -11293,7 +11293,6 @@
     "quality": "blue",
     "price": 28094.0,
     "history": [
-      35774.0,
       35774.0,
       30654.0,
       35774.0,
@@ -11312,9 +11311,10 @@
       28094.0,
       22974.0,
       26814.0,
+      28094.0,
       28094.0
     ],
-    "predictedPrice": 28145,
+    "predictedPrice": 28146,
     "predictedRate": 0.2
   },
   "記憶體": {
@@ -11406,9 +11406,8 @@
     "name": "沙暴垂直補償器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 51413.0,
+    "price": 48093.0,
     "history": [
-      74653.0,
       56393.0,
       76313.0,
       71333.0,
@@ -11427,10 +11426,11 @@
       36473.0,
       39793.0,
       33153.0,
-      51413.0
+      51413.0,
+      48093.0
     ],
-    "predictedPrice": 53063,
-    "predictedRate": 3.2
+    "predictedPrice": 49324,
+    "predictedRate": 2.6
   },
   "電動車電池": {
     "name": "電動車電池",
@@ -11440,7 +11440,6 @@
     "history": [
       76568.0,
       76568.0,
-      76568.0,
       72063.0,
       85578.0,
       76568.0,
@@ -11455,12 +11454,13 @@
       76568.0,
       81073.0,
       85578.0,
+      81073.0,
       81073.0,
       81073.0,
       81073.0
     ],
-    "predictedPrice": 81530,
-    "predictedRate": 0.6
+    "predictedPrice": 81475,
+    "predictedRate": 0.5
   },
   "啤牌-K": {
     "name": "啤牌-K",
@@ -11540,9 +11540,8 @@
     "name": "DTK制退器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 25597.0,
+    "price": 21757.0,
     "history": [
-      25597.0,
       34557.0,
       28157.0,
       28157.0,
@@ -11561,18 +11560,18 @@
       21757.0,
       24317.0,
       20477.0,
-      25597.0
+      25597.0,
+      21757.0
     ],
-    "predictedPrice": 26022,
-    "predictedRate": 1.7
+    "predictedPrice": 21762,
+    "predictedRate": 0.0
   },
   "AK19槍托": {
     "name": "AK19槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 30667.0,
+    "price": 28747.0,
     "history": [
-      21067.0,
       22987.0,
       18187.0,
       28747.0,
@@ -11591,10 +11590,11 @@
       22987.0,
       18187.0,
       18187.0,
-      30667.0
+      30667.0,
+      28747.0
     ],
-    "predictedPrice": 32802,
-    "predictedRate": 7.0
+    "predictedPrice": 30414,
+    "predictedRate": 5.8
   },
   "SR-25新星超長槍管": {
     "name": "SR-25新星超長槍管",
@@ -11780,9 +11780,8 @@
     "name": "PKM地平線重槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 79662.0,
+    "price": 95082.0,
     "history": [
-      80947.0,
       82232.0,
       77092.0,
       80947.0,
@@ -11801,10 +11800,11 @@
       65527.0,
       65527.0,
       84802.0,
-      79662.0
+      79662.0,
+      95082.0
     ],
-    "predictedPrice": 81098,
-    "predictedRate": 1.8
+    "predictedPrice": 98522,
+    "predictedRate": 3.6
   },
   "DAS 防彈頭盔 (幾乎全新)": {
     "name": "DAS 防彈頭盔 (幾乎全新)",
@@ -11990,9 +11990,8 @@
     "name": "相位戰鬥前握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 51711.0,
+    "price": 49926.0,
     "history": [
-      73131.0,
       62421.0,
       58851.0,
       49926.0,
@@ -12011,10 +12010,11 @@
       51711.0,
       49926.0,
       49926.0,
-      51711.0
+      51711.0,
+      49926.0
     ],
-    "predictedPrice": 51580,
-    "predictedRate": -0.3
+    "predictedPrice": 49711,
+    "predictedRate": -0.4
   },
   "G3平台神射槍管組合": {
     "name": "G3平台神射槍管組合",
@@ -12052,7 +12052,6 @@
     "quality": "blue",
     "price": 51526.0,
     "history": [
-      49746.0,
       44406.0,
       51526.0,
       51526.0,
@@ -12070,19 +12069,19 @@
       49746.0,
       49746.0,
       44406.0,
+      51526.0,
       51526.0,
       51526.0
     ],
-    "predictedPrice": 51775,
-    "predictedRate": 0.5
+    "predictedPrice": 51755,
+    "predictedRate": 0.4
   },
   "M250 75發彈鏈": {
     "name": "M250 75發彈鏈",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 49747.0,
+    "price": 51527.0,
     "history": [
-      49747.0,
       49747.0,
       51527.0,
       51527.0,
@@ -12101,10 +12100,11 @@
       46187.0,
       51527.0,
       51527.0,
-      49747.0
+      49747.0,
+      51527.0
     ],
-    "predictedPrice": 49741,
-    "predictedRate": -0.0
+    "predictedPrice": 51700,
+    "predictedRate": 0.3
   },
   "MP5 50發彈鼓": {
     "name": "MP5 50發彈鼓",
@@ -12416,9 +12416,8 @@
     "name": "侵襲後握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 26043.0,
+    "price": 27973.0,
     "history": [
-      34728.0,
       34728.0,
       28938.0,
       30868.0,
@@ -12437,18 +12436,18 @@
       26043.0,
       23148.0,
       23148.0,
-      26043.0
+      26043.0,
+      27973.0
     ],
-    "predictedPrice": 26022,
-    "predictedRate": -0.1
+    "predictedPrice": 28183,
+    "predictedRate": 0.8
   },
   "M7實用消音器": {
     "name": "M7實用消音器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 37543.0,
+    "price": 40438.0,
     "history": [
-      38508.0,
       39473.0,
       37543.0,
       38508.0,
@@ -12467,10 +12466,11 @@
       38508.0,
       38508.0,
       37543.0,
-      37543.0
+      37543.0,
+      40438.0
     ],
-    "predictedPrice": 37446,
-    "predictedRate": -0.3
+    "predictedPrice": 40649,
+    "predictedRate": 0.5
   },
   "M4擴充45發彈匣": {
     "name": "M4擴充45發彈匣",
@@ -12771,9 +12771,8 @@
     "name": "AS Val突擊步槍",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 361511.0,
+    "price": 309111.0,
     "history": [
-      282911.0,
       298631.0,
       235751.0,
       319591.0,
@@ -12792,10 +12791,11 @@
       293391.0,
       293391.0,
       298631.0,
-      361511.0
+      361511.0,
+      309111.0
     ],
-    "predictedPrice": 372359,
-    "predictedRate": 3.0
+    "predictedPrice": 313227,
+    "predictedRate": 1.3
   },
   "中心貴賓室": {
     "name": "中心貴賓室",
@@ -12861,9 +12861,8 @@
     "name": "M14洞察超長槍管",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 193290.0,
+    "price": 195080.0,
     "history": [
-      178970.0,
       186130.0,
       182550.0,
       168230.0,
@@ -12882,18 +12881,18 @@
       168230.0,
       170020.0,
       170020.0,
-      193290.0
+      193290.0,
+      195080.0
     ],
-    "predictedPrice": 195739,
+    "predictedPrice": 197574,
     "predictedRate": 1.3
   },
   "Mask-1鐵壁頭盔 (全新)": {
     "name": "Mask-1鐵壁頭盔 (全新)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 245429.0,
+    "price": 240709.0,
     "history": [
-      202949.0,
       245429.0,
       226549.0,
       221829.0,
@@ -12912,10 +12911,11 @@
       212389.0,
       212389.0,
       212389.0,
-      245429.0
+      245429.0,
+      240709.0
     ],
-    "predictedPrice": 249344,
-    "predictedRate": 1.6
+    "predictedPrice": 243770,
+    "predictedRate": 1.3
   },
   "實驗數據": {
     "name": "實驗數據",
@@ -12951,9 +12951,8 @@
     "name": "AK重塔握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 48025.0,
+    "price": 56035.0,
     "history": [
-      49805.0,
       50695.0,
       55145.0,
       50695.0,
@@ -12972,18 +12971,18 @@
       37345.0,
       34675.0,
       48915.0,
-      48025.0
+      48025.0,
+      56035.0
     ],
-    "predictedPrice": 48805,
-    "predictedRate": 1.6
+    "predictedPrice": 57816,
+    "predictedRate": 3.2
   },
   "Mask-1鐵壁頭盔 (破損)": {
     "name": "Mask-1鐵壁頭盔 (破損)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 148697.0,
+    "price": 168527.0,
     "history": [
-      168527.0,
       168527.0,
       148697.0,
       161917.0,
@@ -13002,10 +13001,11 @@
       165222.0,
       158612.0,
       158612.0,
-      148697.0
+      148697.0,
+      168527.0
     ],
-    "predictedPrice": 147487,
-    "predictedRate": -0.8
+    "predictedPrice": 169495,
+    "predictedRate": 0.6
   },
   "血壓計": {
     "name": "血壓計",
@@ -13071,9 +13071,8 @@
     "name": "VSS海嘯長槍管組合",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 200442.0,
+    "price": 164642.0,
     "history": [
-      164642.0,
       171802.0,
       146742.0,
       136002.0,
@@ -13092,18 +13091,18 @@
       125262.0,
       125262.0,
       103782.0,
-      200442.0
+      200442.0,
+      164642.0
     ],
-    "predictedPrice": 215704,
-    "predictedRate": 7.6
+    "predictedPrice": 173604,
+    "predictedRate": 5.4
   },
   "VSS 45發彈匣": {
     "name": "VSS 45發彈匣",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 120951.0,
+    "price": 103151.0,
     "history": [
-      87131.0,
       85351.0,
       90691.0,
       81791.0,
@@ -13122,10 +13121,11 @@
       65771.0,
       65771.0,
       80011.0,
-      120951.0
+      120951.0,
+      103151.0
     ],
-    "predictedPrice": 127533,
-    "predictedRate": 5.4
+    "predictedPrice": 106968,
+    "predictedRate": 3.7
   },
   "VSS精英一體槍托": {
     "name": "VSS精英一體槍托",
@@ -13133,7 +13133,6 @@
     "quality": "gold",
     "price": 103065.0,
     "history": [
-      145725.0,
       138615.0,
       145725.0,
       138615.0,
@@ -13152,10 +13151,11 @@
       103065.0,
       103065.0,
       103065.0,
+      103065.0,
       103065.0
     ],
-    "predictedPrice": 101411,
-    "predictedRate": -1.6
+    "predictedPrice": 101550,
+    "predictedRate": -1.5
   },
   "衞隊金扳指": {
     "name": "衞隊金扳指",
@@ -13341,10 +13341,9 @@
     "name": "GS5手掣",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 32879.0,
+    "price": 30944.0,
     "history": [
       36749.0,
-      36749.0,
       38684.0,
       34814.0,
       32879.0,
@@ -13362,18 +13361,18 @@
       34814.0,
       32879.0,
       38684.0,
-      32879.0
+      32879.0,
+      30944.0
     ],
-    "predictedPrice": 32728,
-    "predictedRate": -0.5
+    "predictedPrice": 30631,
+    "predictedRate": -1.0
   },
   "PT1特種槍托": {
     "name": "PT1特種槍托",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 41035.0,
+    "price": 51745.0,
     "history": [
-      41035.0,
       42820.0,
       41035.0,
       51745.0,
@@ -13392,10 +13391,11 @@
       49960.0,
       49960.0,
       51745.0,
-      41035.0
+      41035.0,
+      51745.0
     ],
-    "predictedPrice": 40670,
-    "predictedRate": -0.9
+    "predictedPrice": 52612,
+    "predictedRate": 1.7
   },
   "M7 45發6.8彈鼓": {
     "name": "M7 45發6.8彈鼓",
@@ -13431,9 +13431,8 @@
     "name": "堡壘水平補償器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 44752.0,
+    "price": 36452.0,
     "history": [
-      56372.0,
       48072.0,
       44752.0,
       44752.0,
@@ -13452,10 +13451,11 @@
       46412.0,
       41432.0,
       38112.0,
-      44752.0
+      44752.0,
+      36452.0
     ],
-    "predictedPrice": 45492,
-    "predictedRate": 1.7
+    "predictedPrice": 36335,
+    "predictedRate": -0.3
   },
   "東區吊橋": {
     "name": "東區吊橋",
@@ -13551,9 +13551,8 @@
     "name": "M7戰鬥步槍",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 309914.0,
+    "price": 267154.0,
     "history": [
-      197669.0,
       256464.0,
       261809.0,
       229739.0,
@@ -13572,10 +13571,11 @@
       251119.0,
       251119.0,
       251119.0,
-      309914.0
+      309914.0,
+      267154.0
     ],
-    "predictedPrice": 319543,
-    "predictedRate": 3.1
+    "predictedPrice": 270868,
+    "predictedRate": 1.4
   },
   "攝影機": {
     "name": "攝影機",
@@ -13670,10 +13670,9 @@
   "廣角鏡頭": {
     "name": "廣角鏡頭",
     "category": "交易所物資",
-    "quality": "gold",
-    "price": 108162.0,
+    "quality": "blue",
+    "price": 99837.0,
     "history": [
-      122037.0,
       110937.0,
       99837.0,
       110937.0,
@@ -13692,10 +13691,11 @@
       116487.0,
       116487.0,
       105387.0,
-      108162.0
+      108162.0,
+      99837.0
     ],
-    "predictedPrice": 109366,
-    "predictedRate": 1.1
+    "predictedPrice": 100171,
+    "predictedRate": 0.3
   },
   "組裝車間二樓實驗室": {
     "name": "組裝車間二樓實驗室",
@@ -13838,6 +13838,7 @@
       439776.0,
       439776.0,
       439776.0,
+      439776.0,
       439776.0
     ],
     "predictedPrice": 439776,
@@ -13907,9 +13908,8 @@
     "name": "SKS射手步槍",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 39600.0,
+    "price": 41580.0,
     "history": [
-      40590.0,
       36630.0,
       41580.0,
       41580.0,
@@ -13928,10 +13928,11 @@
       41580.0,
       41580.0,
       42570.0,
-      39600.0
+      39600.0,
+      41580.0
     ],
-    "predictedPrice": 39587,
-    "predictedRate": -0.0
+    "predictedPrice": 41754,
+    "predictedRate": 0.4
   },
   "聚乙烯纖維": {
     "name": "聚乙烯纖維",
@@ -14050,9 +14051,8 @@
     "name": "共振人體工學握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 73299.0,
+    "price": 76879.0,
     "history": [
-      58979.0,
       57189.0,
       66139.0,
       66139.0,
@@ -14071,10 +14071,11 @@
       71509.0,
       66139.0,
       64349.0,
-      73299.0
+      73299.0,
+      76879.0
     ],
-    "predictedPrice": 74143,
-    "predictedRate": 1.2
+    "predictedPrice": 78022,
+    "predictedRate": 1.5
   },
   "座鐘": {
     "name": "座鐘",
@@ -14140,9 +14141,8 @@
     "name": "海神消焰器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 28029.0,
+    "price": 31329.0,
     "history": [
-      41229.0,
       37929.0,
       31329.0,
       46179.0,
@@ -14161,10 +14161,11 @@
       29679.0,
       29679.0,
       29679.0,
-      28029.0
+      28029.0,
+      31329.0
     ],
-    "predictedPrice": 27754,
-    "predictedRate": -1.0
+    "predictedPrice": 31411,
+    "predictedRate": 0.3
   },
   "樞機先進戰鬥槍托": {
     "name": "樞機先進戰鬥槍托",
@@ -14200,9 +14201,8 @@
     "name": "共振二代前握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 46529.0,
+    "price": 33999.0,
     "history": [
-      32209.0,
       28629.0,
       33999.0,
       30419.0,
@@ -14221,10 +14221,11 @@
       26839.0,
       26839.0,
       26839.0,
-      46529.0
+      46529.0,
+      33999.0
     ],
-    "predictedPrice": 49819,
-    "predictedRate": 7.1
+    "predictedPrice": 35356,
+    "predictedRate": 4.0
   },
   "G3戰鬥步槍": {
     "name": "G3戰鬥步槍",
@@ -14260,9 +14261,8 @@
     "name": "AUG晨零一體消音管",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 105164.0,
+    "price": 102599.0,
     "history": [
-      112859.0,
       128249.0,
       133379.0,
       125684.0,
@@ -14281,10 +14281,11 @@
       105164.0,
       105164.0,
       105164.0,
-      105164.0
+      105164.0,
+      102599.0
     ],
-    "predictedPrice": 105144,
-    "predictedRate": -0.0
+    "predictedPrice": 102297,
+    "predictedRate": -0.3
   },
   "SR-25 30發擴充彈匣": {
     "name": "SR-25 30發擴充彈匣",
@@ -14320,9 +14321,8 @@
     "name": "先進多口徑消音器",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 70986.0,
+    "price": 56786.0,
     "history": [
-      63886.0,
       56786.0,
       65661.0,
       55011.0,
@@ -14341,10 +14341,11 @@
       69211.0,
       83411.0,
       83411.0,
-      70986.0
+      70986.0,
+      56786.0
     ],
-    "predictedPrice": 72060,
-    "predictedRate": 1.5
+    "predictedPrice": 56430,
+    "predictedRate": -0.6
   },
   "M1014斷點槍管": {
     "name": "M1014斷點槍管",
@@ -14380,9 +14381,8 @@
     "name": "Osight微型瞄準鏡",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 21052.0,
+    "price": 24657.0,
     "history": [
-      22082.0,
       25172.0,
       25687.0,
       23112.0,
@@ -14401,10 +14401,11 @@
       18992.0,
       18992.0,
       20537.0,
-      21052.0
+      21052.0,
+      24657.0
     ],
-    "predictedPrice": 21139,
-    "predictedRate": 0.4
+    "predictedPrice": 25163,
+    "predictedRate": 2.1
   },
   "PKM澤寧特槍托": {
     "name": "PKM澤寧特槍托",
@@ -14590,9 +14591,8 @@
     "name": "H09防暴頭盔 (全新)",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 386326.0,
+    "price": 368491.0,
     "history": [
-      350656.0,
       344711.0,
       380381.0,
       380381.0,
@@ -14611,10 +14611,11 @@
       350656.0,
       374436.0,
       404161.0,
-      386326.0
+      386326.0,
+      368491.0
     ],
-    "predictedPrice": 389055,
-    "predictedRate": 0.7
+    "predictedPrice": 369105,
+    "predictedRate": 0.2
   },
   "軍情錄音": {
     "name": "軍情錄音",
@@ -14680,9 +14681,8 @@
     "name": "XCOG突擊3.5倍瞄準鏡",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 57501.0,
+    "price": 43421.0,
     "history": [
-      49821.0,
       47261.0,
       58781.0,
       51101.0,
@@ -14701,10 +14701,11 @@
       63901.0,
       63901.0,
       63901.0,
-      57501.0
+      57501.0,
+      43421.0
     ],
-    "predictedPrice": 58037,
-    "predictedRate": 0.9
+    "predictedPrice": 42690,
+    "predictedRate": -1.7
   },
   "軍用望遠鏡": {
     "name": "軍用望遠鏡",
@@ -14851,9 +14852,8 @@
     "name": "RK-0前握把",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 22977.0,
+    "price": 23937.0,
     "history": [
-      19137.0,
       23937.0,
       19137.0,
       19137.0,
@@ -14872,10 +14872,11 @@
       20097.0,
       19137.0,
       22017.0,
-      22977.0
+      22977.0,
+      23937.0
     ],
-    "predictedPrice": 23437,
-    "predictedRate": 2.0
+    "predictedPrice": 24472,
+    "predictedRate": 2.2
   },
   "數碼相機": {
     "name": "數碼相機",
@@ -14906,7 +14907,6 @@
     "quality": "gold",
     "price": 103754.0,
     "history": [
-      100174.0,
       103754.0,
       96594.0,
       103754.0,
@@ -14925,10 +14925,11 @@
       103754.0,
       100174.0,
       100174.0,
+      103754.0,
       103754.0
     ],
-    "predictedPrice": 103923,
-    "predictedRate": 0.2
+    "predictedPrice": 103898,
+    "predictedRate": 0.1
   },
   "ASh-12 殲滅高精長槍管": {
     "name": "ASh-12 殲滅高精長槍管",
@@ -14964,9 +14965,8 @@
     "name": "ASh-12擴充30發彈匣",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 51763.0,
+    "price": 33913.0,
     "history": [
-      48193.0,
       49978.0,
       48193.0,
       49978.0,
@@ -14985,10 +14985,11 @@
       26773.0,
       26773.0,
       26773.0,
-      51763.0
+      51763.0,
+      33913.0
     ],
-    "predictedPrice": 54621,
-    "predictedRate": 5.5
+    "predictedPrice": 34531,
+    "predictedRate": 1.8
   },
   "摩卡咖啡壺": {
     "name": "摩卡咖啡壺",
@@ -15054,9 +15055,8 @@
     "name": "射手戰術背心 (幾乎全新)",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 30897.0,
+    "price": 32527.0,
     "history": [
-      29267.0,
       34157.0,
       30897.0,
       35787.0,
@@ -15075,10 +15075,11 @@
       35787.0,
       35787.0,
       30897.0,
-      30897.0
+      30897.0,
+      32527.0
     ],
-    "predictedPrice": 30676,
-    "predictedRate": -0.7
+    "predictedPrice": 32435,
+    "predictedRate": -0.3
   },
   "X25U斜側戰鬥握把": {
     "name": "X25U斜側戰鬥握把",
@@ -15086,7 +15087,6 @@
     "quality": "blue",
     "price": 30874.0,
     "history": [
-      27014.0,
       23154.0,
       24119.0,
       24119.0,
@@ -15105,18 +15105,18 @@
       26049.0,
       27014.0,
       27014.0,
+      30874.0,
       30874.0
     ],
-    "predictedPrice": 31517,
-    "predictedRate": 2.1
+    "predictedPrice": 31480,
+    "predictedRate": 2.0
   },
   "DBAL-X2紫色激光鐳指": {
     "name": "DBAL-X2紫色激光鐳指",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 32600.0,
+    "price": 37400.0,
     "history": [
-      35480.0,
       36440.0,
       31640.0,
       34520.0,
@@ -15135,10 +15135,11 @@
       42200.0,
       34520.0,
       33560.0,
-      32600.0
+      32600.0,
+      37400.0
     ],
-    "predictedPrice": 32729,
-    "predictedRate": 0.4
+    "predictedPrice": 38078,
+    "predictedRate": 1.8
   },
   "戰術垂直握把": {
     "name": "戰術垂直握把",
@@ -15174,9 +15175,8 @@
     "name": "PEQ-2紅色激光鐳指",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 32581.0,
+    "price": 27781.0,
     "history": [
-      23941.0,
       23941.0,
       24901.0,
       26821.0,
@@ -15195,10 +15195,11 @@
       22981.0,
       22981.0,
       23941.0,
-      32581.0
+      32581.0,
+      27781.0
     ],
-    "predictedPrice": 34423,
-    "predictedRate": 5.7
+    "predictedPrice": 28841,
+    "predictedRate": 3.8
   },
   "RK3後握把": {
     "name": "RK3後握把",
@@ -15206,7 +15207,6 @@
     "quality": "blue",
     "price": 24938.0,
     "history": [
-      23018.0,
       24938.0,
       23018.0,
       24938.0,
@@ -15225,9 +15225,10 @@
       23978.0,
       23978.0,
       23978.0,
+      24938.0,
       24938.0
     ],
-    "predictedPrice": 25017,
+    "predictedPrice": 25003,
     "predictedRate": 0.3
   },
   "情報文件": {
@@ -15264,9 +15265,8 @@
     "name": "TG-H避彈衣 (幾乎全新)",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 25515.0,
+    "price": 26935.0,
     "history": [
-      34035.0,
       31195.0,
       26935.0,
       26935.0,
@@ -15285,18 +15285,18 @@
       28355.0,
       25515.0,
       28355.0,
-      25515.0
+      25515.0,
+      26935.0
     ],
-    "predictedPrice": 25390,
-    "predictedRate": -0.5
+    "predictedPrice": 26974,
+    "predictedRate": 0.1
   },
   "PSG-1射手步槍": {
     "name": "PSG-1射手步槍",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 67500.0,
+    "price": 59400.0,
     "history": [
-      99900.0,
       72900.0,
       64800.0,
       62100.0,
@@ -15315,10 +15315,11 @@
       99900.0,
       99900.0,
       99900.0,
-      67500.0
+      67500.0,
+      59400.0
     ],
-    "predictedPrice": 67108,
-    "predictedRate": -0.6
+    "predictedPrice": 58399,
+    "predictedRate": -1.7
   },
   "LPVO高倍率戰鬥瞄準器": {
     "name": "LPVO高倍率戰鬥瞄準器",
@@ -15326,7 +15327,6 @@
     "quality": "blue",
     "price": 38549.0,
     "history": [
-      38549.0,
       37219.0,
       38549.0,
       38549.0,
@@ -15341,6 +15341,7 @@
       38549.0,
       38549.0,
       37219.0,
+      38549.0,
       38549.0,
       38549.0,
       38549.0,
@@ -15386,7 +15387,6 @@
     "quality": "blue",
     "price": 37041.0,
     "history": [
-      29361.0,
       34481.0,
       25521.0,
       33201.0,
@@ -15405,10 +15405,11 @@
       33201.0,
       37041.0,
       37041.0,
+      37041.0,
       37041.0
     ],
-    "predictedPrice": 37529,
-    "predictedRate": 1.3
+    "predictedPrice": 37457,
+    "predictedRate": 1.1
   },
   "側置XRO快速反應瞄準鏡": {
     "name": "側置XRO快速反應瞄準鏡",
@@ -15494,7 +15495,6 @@
     "quality": "blue",
     "price": 37800.0,
     "history": [
-      46200.0,
       39900.0,
       39900.0,
       39900.0,
@@ -15513,10 +15513,11 @@
       42000.0,
       37800.0,
       37800.0,
+      37800.0,
       37800.0
     ],
-    "predictedPrice": 37506,
-    "predictedRate": -0.8
+    "predictedPrice": 37541,
+    "predictedRate": -0.7
   },
   "霰彈槍精密消音器": {
     "name": "霰彈槍精密消音器",
@@ -15539,9 +15540,8 @@
     "name": "LA-3C綠色激光鐳指",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 31835.0,
+    "price": 26045.0,
     "history": [
-      25080.0,
       34730.0,
       28940.0,
       27975.0,
@@ -15560,10 +15560,11 @@
       27975.0,
       27010.0,
       27010.0,
-      31835.0
+      31835.0,
+      26045.0
     ],
-    "predictedPrice": 32412,
-    "predictedRate": 1.8
+    "predictedPrice": 25967,
+    "predictedRate": -0.3
   },
   "伸縮腳架握把": {
     "name": "伸縮腳架握把",
@@ -15808,9 +15809,8 @@
     "name": "M14 50發彈鼓",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 198767.0,
+    "price": 193442.0,
     "history": [
-      186342.0,
       196992.0,
       198767.0,
       196992.0,
@@ -15829,10 +15829,11 @@
       177467.0,
       177467.0,
       177467.0,
-      198767.0
+      198767.0,
+      193442.0
     ],
-    "predictedPrice": 200011,
-    "predictedRate": 0.6
+    "predictedPrice": 194039,
+    "predictedRate": 0.3
   },
   "1014伸縮托(展開)": {
     "name": "1014伸縮托(展開)",
@@ -15898,9 +15899,8 @@
     "name": "M7靈蜥短槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 30293.0,
+    "price": 44573.0,
     "history": [
-      41003.0,
       35648.0,
       33863.0,
       33863.0,
@@ -15919,10 +15919,11 @@
       42788.0,
       28508.0,
       28508.0,
-      30293.0
+      30293.0,
+      44573.0
     ],
-    "predictedPrice": 29916,
-    "predictedRate": -1.2
+    "predictedPrice": 46152,
+    "predictedRate": 3.5
   },
   "啤牌-8": {
     "name": "啤牌-8",
@@ -15953,9 +15954,8 @@
     "name": "啤牌-大王",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 13350.0,
+    "price": 14150.0,
     "history": [
-      12800.0,
       14850.0,
       14850.0,
       1150.0,
@@ -15974,10 +15974,11 @@
       15000.0,
       15000.0,
       14050.0,
-      13350.0
+      13350.0,
+      14150.0
     ],
-    "predictedPrice": 17800,
-    "predictedRate": 33.3
+    "predictedPrice": 17994,
+    "predictedRate": 27.2
   },
   "QBZ95-1突擊步槍": {
     "name": "QBZ95-1突擊步槍",
@@ -16036,7 +16037,6 @@
     "quality": "blue",
     "price": 51543.0,
     "history": [
-      40863.0,
       44423.0,
       42643.0,
       49763.0,
@@ -16055,18 +16055,18 @@
       49763.0,
       51543.0,
       51543.0,
+      51543.0,
       51543.0
     ],
-    "predictedPrice": 51882,
-    "predictedRate": 0.7
+    "predictedPrice": 51812,
+    "predictedRate": 0.5
   },
   "盒裝掛耳咖啡": {
     "name": "盒裝掛耳咖啡",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 363867.0,
+    "price": 377022.0,
     "history": [
-      368252.0,
       372637.0,
       350712.0,
       359482.0,
@@ -16085,18 +16085,18 @@
       377022.0,
       350712.0,
       363867.0,
-      363867.0
+      363867.0,
+      377022.0
     ],
-    "predictedPrice": 364061,
-    "predictedRate": 0.1
+    "predictedPrice": 378584,
+    "predictedRate": 0.4
   },
   "M4A1突擊步槍": {
     "name": "M4A1突擊步槍",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 225898.0,
+    "price": 201138.0,
     "history": [
-      210423.0,
       176378.0,
       163998.0,
       222803.0,
@@ -16115,10 +16115,11 @@
       194948.0,
       191853.0,
       173283.0,
-      225898.0
+      225898.0,
+      201138.0
     ],
-    "predictedPrice": 230450,
-    "predictedRate": 2.0
+    "predictedPrice": 202741,
+    "predictedRate": 0.8
   },
   "勇士戰術槍管": {
     "name": "勇士戰術槍管",
@@ -16503,9 +16504,8 @@
     "name": "AKS-74U 75發聚合物彈鼓",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 19191.0,
+    "price": 26901.0,
     "history": [
-      23046.0,
       24331.0,
       33326.0,
       34611.0,
@@ -16524,18 +16524,18 @@
       19191.0,
       19191.0,
       19191.0,
-      19191.0
+      19191.0,
+      26901.0
     ],
-    "predictedPrice": 18811,
-    "predictedRate": -2.0
+    "predictedPrice": 27443,
+    "predictedRate": 2.0
   },
   "「起舞的女郎」掛飾": {
     "name": "「起舞的女郎」掛飾",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 13642.0,
+    "price": 84443.0,
     "history": [
-      14212.0,
       84443.0,
       84443.0,
       84443.0,
@@ -16554,18 +16554,18 @@
       84443.0,
       84443.0,
       84443.0,
-      13642.0
+      13642.0,
+      84443.0
     ],
-    "predictedPrice": 19956,
-    "predictedRate": 46.3
+    "predictedPrice": 161225,
+    "predictedRate": 90.9
   },
   "6/12神射手變倍狙擊鏡": {
     "name": "6/12神射手變倍狙擊鏡",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 75894.0,
+    "price": 89304.0,
     "history": [
-      96009.0,
       91539.0,
       87069.0,
       80364.0,
@@ -16584,10 +16584,11 @@
       69189.0,
       71424.0,
       69189.0,
-      75894.0
+      75894.0,
+      89304.0
     ],
-    "predictedPrice": 76025,
-    "predictedRate": 0.2
+    "predictedPrice": 91126,
+    "predictedRate": 2.0
   },
   "M14 20發彈匣": {
     "name": "M14 20發彈匣",
@@ -16853,9 +16854,8 @@
     "name": "MP7狼牙輕槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 28400.0,
+    "price": 30175.0,
     "history": [
-      44375.0,
       37275.0,
       35500.0,
       46150.0,
@@ -16874,10 +16874,11 @@
       33725.0,
       28400.0,
       28400.0,
-      28400.0
+      28400.0,
+      30175.0
     ],
-    "predictedPrice": 27920,
-    "predictedRate": -1.7
+    "predictedPrice": 29882,
+    "predictedRate": -1.0
   },
   "GIR野戰胸掛": {
     "name": "GIR野戰胸掛",
@@ -17291,9 +17292,8 @@
     "name": "SG552突擊步槍",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 39059.0,
+    "price": 43754.0,
     "history": [
-      37494.0,
       39059.0,
       39059.0,
       45319.0,
@@ -17312,10 +17312,11 @@
       39059.0,
       45319.0,
       45319.0,
-      39059.0
+      39059.0,
+      43754.0
     ],
-    "predictedPrice": 39073,
-    "predictedRate": 0.0
+    "predictedPrice": 44276,
+    "predictedRate": 1.2
   },
   "Vector擴充40發彈匣": {
     "name": "Vector擴充40發彈匣",
@@ -17491,7 +17492,6 @@
     "quality": "blue",
     "price": 52104.0,
     "history": [
-      60224.0,
       52104.0,
       61384.0,
       56744.0,
@@ -17510,10 +17510,11 @@
       90384.0,
       90384.0,
       47464.0,
+      52104.0,
       52104.0
     ],
-    "predictedPrice": 53752,
-    "predictedRate": 3.2
+    "predictedPrice": 53507,
+    "predictedRate": 2.7
   },
   "運輸機會議室": {
     "name": "運輸機會議室",
@@ -17620,9 +17621,8 @@
     "name": "PKM通用機槍",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 63833.0,
+    "price": 60793.0,
     "history": [
-      51673.0,
       57753.0,
       60793.0,
       72953.0,
@@ -17641,10 +17641,11 @@
       72953.0,
       69913.0,
       57753.0,
-      63833.0
+      63833.0,
+      60793.0
     ],
-    "predictedPrice": 64721,
-    "predictedRate": 1.4
+    "predictedPrice": 61206,
+    "predictedRate": 0.7
   },
   "微型反應爐": {
     "name": "微型反應爐",
@@ -17680,9 +17681,8 @@
     "name": "雷達站會議室",
     "category": "交易所物資",
     "quality": "gold",
-    "price": 491353.0,
+    "price": 466783.0,
     "history": [
-      466783.0,
       491353.0,
       491353.0,
       491353.0,
@@ -17701,10 +17701,11 @@
       466783.0,
       466783.0,
       466783.0,
-      491353.0
+      491353.0,
+      466783.0
     ],
-    "predictedPrice": 493163,
-    "predictedRate": 0.4
+    "predictedPrice": 466020,
+    "predictedRate": -0.2
   },
   "燃料電池": {
     "name": "燃料電池",
@@ -17742,7 +17743,6 @@
     "price": 30756.0,
     "history": [
       24331.0,
-      24331.0,
       32041.0,
       32041.0,
       25616.0,
@@ -17760,10 +17760,11 @@
       29471.0,
       32041.0,
       32041.0,
+      30756.0,
       30756.0
     ],
-    "predictedPrice": 31035,
-    "predictedRate": 0.9
+    "predictedPrice": 30975,
+    "predictedRate": 0.7
   },
   "SMG-45 40發擴充彈匣": {
     "name": "SMG-45 40發擴充彈匣",
@@ -17799,9 +17800,8 @@
     "name": "ACOG精準六倍鏡",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 25793.0,
+    "price": 19563.0,
     "history": [
-      22233.0,
       19563.0,
       21343.0,
       24903.0,
@@ -17820,10 +17820,11 @@
       25793.0,
       25793.0,
       25793.0,
-      25793.0
+      25793.0,
+      19563.0
     ],
-    "predictedPrice": 25982,
-    "predictedRate": 0.7
+    "predictedPrice": 19214,
+    "predictedRate": -1.8
   },
   "M16A4突擊步槍": {
     "name": "M16A4突擊步槍",
@@ -17859,7 +17860,6 @@
     "quality": "blue",
     "price": 22989.0,
     "history": [
-      28464.0,
       24084.0,
       24084.0,
       24084.0,
@@ -17869,6 +17869,7 @@
       22989.0,
       22989.0,
       24084.0,
+      22989.0,
       22989.0,
       22989.0,
       22989.0,
@@ -17880,8 +17881,8 @@
       22989.0,
       22989.0
     ],
-    "predictedPrice": 22940,
-    "predictedRate": -0.2
+    "predictedPrice": 22964,
+    "predictedRate": -0.1
   },
   "戰鬥紅點瞄準鏡": {
     "name": "戰鬥紅點瞄準鏡",
@@ -18007,9 +18008,8 @@
     "name": "軍用露營燈",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 57878.0,
+    "price": 60928.0,
     "history": [
-      57878.0,
       54828.0,
       57878.0,
       57878.0,
@@ -18028,10 +18028,11 @@
       57878.0,
       57878.0,
       57878.0,
-      57878.0
+      57878.0,
+      60928.0
     ],
-    "predictedPrice": 58311,
-    "predictedRate": 0.7
+    "predictedPrice": 61688,
+    "predictedRate": 1.2
   },
   "OPS消音器": {
     "name": "OPS消音器",
@@ -18157,9 +18158,8 @@
     "name": "SKS截斷標準槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 28059.0,
+    "price": 39309.0,
     "history": [
-      35559.0,
       33684.0,
       31809.0,
       31809.0,
@@ -18178,10 +18178,11 @@
       29934.0,
       28059.0,
       29934.0,
-      28059.0
+      28059.0,
+      39309.0
     ],
-    "predictedPrice": 28220,
-    "predictedRate": 0.6
+    "predictedPrice": 41112,
+    "predictedRate": 4.6
   },
   "M14聚合物一體槍托": {
     "name": "M14聚合物一體槍托",
@@ -18743,9 +18744,8 @@
     "name": "K416精英重槍管組合",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 36680.0,
+    "price": 35660.0,
     "history": [
-      42800.0,
       39740.0,
       36680.0,
       38720.0,
@@ -18764,10 +18764,11 @@
       36680.0,
       37700.0,
       35660.0,
-      36680.0
+      36680.0,
+      35660.0
     ],
-    "predictedPrice": 36578,
-    "predictedRate": -0.3
+    "predictedPrice": 35484,
+    "predictedRate": -0.5
   },
   "高出力粉碎鉗": {
     "name": "高出力粉碎鉗",
@@ -18969,9 +18970,8 @@
     "name": "PKM壕戰短槍管",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 59040.0,
+    "price": 53900.0,
     "history": [
-      55185.0,
       53900.0,
       64180.0,
       62895.0,
@@ -18990,10 +18990,11 @@
       64180.0,
       50045.0,
       48760.0,
-      59040.0
+      59040.0,
+      53900.0
     ],
-    "predictedPrice": 60306,
-    "predictedRate": 2.1
+    "predictedPrice": 54495,
+    "predictedRate": 1.1
   },
   "犄角牆飾": {
     "name": "犄角牆飾",
@@ -20370,9 +20371,8 @@
     "name": "AKM性能槍管組合",
     "category": "交易所物資",
     "quality": "blue",
-    "price": 64445.0,
+    "price": 67375.0,
     "history": [
-      60050.0,
       64445.0,
       67375.0,
       65910.0,
@@ -20391,10 +20391,11 @@
       68840.0,
       68840.0,
       70305.0,
-      64445.0
+      64445.0,
+      67375.0
     ],
-    "predictedPrice": 64417,
-    "predictedRate": -0.0
+    "predictedPrice": 67618,
+    "predictedRate": 0.4
   },
   "霰彈槍巨炮制退器": {
     "name": "霰彈槍巨炮制退器",
