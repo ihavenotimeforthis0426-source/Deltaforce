@@ -7,73 +7,37 @@
   <script src="https://jsdelivr.net"></script>
   <style>
     :root {
-      --bg-color: #0d131d;
-      --card-bg: #16202e;
-      --card-hover: #1f2d40;
-      --text-main: #f8fafc;
-      --text-sub: #8a9ba8;
-      --accent-green: #00ff88;
-      --accent-red: #ff4d4d;
-      --accent-purple: #a855f7;
-      --accent-blue: #3b82f6;
-      --accent-gold: #eab308;
-      --border-color: rgba(255, 255, 255, 0.08);
+      --bg-color: #0d131d; --card-bg: #16202e; --card-hover: #1f2d40;
+      --text-main: #f8fafc; --text-sub: #8a9ba8; --accent-green: #00ff88;
+      --accent-red: #ff4d4d; --accent-purple: #a855f7; --accent-blue: #3b82f6;
+      --accent-gold: #eab308; --border-color: rgba(255, 255, 255, 0.08);
     }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      margin: 0;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color); color: var(--text-main);
+      margin: 0; padding: 16px; display: flex; flex-direction: column; align-items: center;
     }
-
     .container { max-width: 900px; width: 100%; }
     header { text-align: center; margin-bottom: 20px; }
     h1 { color: var(--accent-green); font-size: 1.6rem; margin-bottom: 6px; letter-spacing: 1px; }
     .status-text { font-size: 0.85rem; color: var(--text-sub); }
     .filter-group { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
-
     .filter-btn {
-      background-color: var(--card-bg);
-      color: var(--text-sub);
-      border: 1px solid var(--border-color);
-      padding: 8px 18px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
+      background-color: var(--card-bg); color: var(--text-sub); border: 1px solid var(--border-color);
+      padding: 8px 18px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 500;
     }
-
     .filter-btn.active, .filter-btn:hover {
-      background-color: #203147;
-      color: var(--accent-green);
-      border-color: var(--accent-green);
-      font-weight: bold;
+      background-color: #203147; color: var(--accent-green); border-color: var(--accent-green); font-weight: bold;
     }
-
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
-
     .card {
-      background-color: var(--card-bg);
-      border-radius: 8px;
-      padding: 14px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      border-left: 4px solid var(--text-sub);
-      cursor: pointer;
-      transition: transform 0.15s ease, background-color 0.15s ease;
+      background-color: var(--card-bg); border-radius: 8px; padding: 14px;
+      border-left: 4px solid var(--text-sub); cursor: pointer;
     }
-
-    .card:hover { transform: translateY(-2px); background-color: var(--card-hover); }
     .card.red { border-left-color: var(--accent-red); }
     .card.purple { border-left-color: var(--accent-purple); }
     .card.blue { border-left-color: var(--accent-blue); }
     .card.gold { border-left-color: var(--accent-gold); }
-
     .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
     .item-name { font-weight: bold; font-size: 1.05rem; }
     .item-category { font-size: 0.75rem; background: rgba(255, 255, 255, 0.08); padding: 2px 8px; border-radius: 4px; color: var(--text-sub); }
@@ -82,20 +46,15 @@
     .rate-up { color: var(--accent-red); }
     .rate-down { color: var(--accent-green); }
     .click-hint { font-size: 0.75rem; color: var(--accent-green); text-align: right; margin-top: 8px; opacity: 0.8; }
-
     .modal-overlay {
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(4px); z-index: 1000;
-      justify-content: center; align-items: center;
+      background: rgba(0, 0, 0, 0.75); z-index: 1000; justify-content: center; align-items: center;
     }
-
     .modal-content {
       background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px;
-      width: 90%; max-width: 500px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.6); position: relative;
+      width: 90%; max-width: 500px; padding: 20px; position: relative;
     }
-
     .modal-close { position: absolute; top: 12px; right: 16px; font-size: 1.5rem; color: var(--text-sub); cursor: pointer; }
-    .modal-close:hover { color: #fff; }
     .modal-title { font-size: 1.3rem; font-weight: bold; margin-bottom: 4px; }
     .chart-box { margin-top: 16px; height: 200px; width: 100%; }
   </style>
@@ -135,26 +94,24 @@
     let chartInstance = null;
 
     function inferCategory(item) {
-      const name = item.name || '';
-      const cat = item.category || '';
-      if (cat && ['槍械', '裝備', '配件', '彈藥', '收集品', '消耗品', '門卡'].includes(cat)) return cat;
-      if (name.includes('步槍') || name.includes('衝鋒槍') || name.includes('狙擊') || name.includes('手槍') || name.includes('散彈')) return '槍械';
-      if (name.includes('甲') || name.includes('頭盔') || name.includes('背包') || name.includes('胸掛')) return '裝備';
-      if (name.includes('握把') || name.includes('瞄準') || name.includes('槍口') || name.includes('槍托') || name.includes('彈匣')) return '配件';
-      if (name.includes('彈') || name.includes('子彈')) return '彈藥';
-      if (name.includes('磚') || name.includes('淚') || name.includes('文件') || name.includes('金') || name.includes('高價值')) return '收集品';
-      if (name.includes('卡') || name.includes('鑰匙')) return '門卡';
-      if (name.includes('藥') || name.includes('針') || name.includes('包')) return '消耗品';
+      const name = item.name || '', cat = item.category || '';
+      if (['槍械', '裝備', '配件', '彈藥', '收集品', '消耗品', '門卡'].includes(cat)) return cat;
+      if (/步槍|衝鋒槍|狙擊|手槍|散彈/.test(name)) return '槍械';
+      if (/甲|頭盔|背包|胸掛/.test(name)) return '裝備';
+      if (/握把|瞄準|槍口|槍托|彈匣/.test(name)) return '配件';
+      if (/彈|子彈/.test(name)) return '彈藥';
+      if (/卡|鑰匙/.test(name)) return '門卡';
+      if (/藥|針|包/.test(name)) return '消耗品';
       return '收集品';
     }
 
     async function loadMarketData() {
       const statusEl = document.getElementById('status');
       try {
-        const res = await fetch(`./data.json?t=${new Date().getTime()}`);
+        const res = await fetch(`./data.json?t=${Date.now()}`);
         if (!res.ok) throw new Error("找不到 data.json");
         allMarketItems = await res.json();
-        const items = Object.values(allMarketItems);
+        const items = Object.values(allMarketItems).filter(i => !/[\u0400-\u04FF]/.test(i.name || ''));
         if (items.length === 0) { statusEl.innerText = "data.json 暫無物資資料"; return; }
         statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆物資)`;
         renderGrid();
@@ -171,7 +128,7 @@
       const gridEl = document.getElementById('market-grid');
       gridEl.innerHTML = '';
       const items = Object.values(allMarketItems)
-        .filter(item => currentFilter === '全部' || inferCategory(item) === currentFilter)
+        .filter(item => !/[\u0400-\u04FF]/.test(item.name || '') && (currentFilter === '全部' || inferCategory(item) === currentFilter))
         .sort((a, b) => (b.price || 0) - (a.price || 0));
 
       items.forEach(item => {
@@ -211,7 +168,7 @@
       document.getElementById('modal-predicted').innerHTML = `AI 預測價格: $ ${predPrice.toLocaleString()} (${rateHtml})`;
 
       const history = Array.isArray(item.history) ? item.history : [];
-      const labels = history.map((h, i) => (typeof h === 'object' && h && h.time) ? h.time : `紀錄 ${i + 1}`);
+      const labels = history.map((h, i) => (typeof h === 'object' && h && h.time) ? h.time : `早期紀錄 ${i + 1}`);
       const values = history.map(h => (typeof h === 'object' && h !== null) ? Number(h.price) : Number(h));
       const lineColor = predRate < 0 ? '#00ff88' : '#ff4d4d';
 
