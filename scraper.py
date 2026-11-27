@@ -4,15 +4,23 @@ import re
 import time
 import requests
 from bs4 import BeautifulSoup
+from datetime import datetime, timezone, timedelta
 
-# 1. 預設備用物資庫（完全保留你原本的設定）
+# 設定台灣時區 (UTC+8)
+TW_TZ = timezone(timedelta(hours=8))
+
+def get_now_str():
+    return datetime.now(TW_TZ).strftime("%Y-%m-%d %H:%M")
+
+# 1. 預設備用物資庫（已升級為帶時間戳記的格式）
 DEFAULT_ITEMS = {
     "曼德爾磚": {
         "name": "曼德爾磚",
         "category": "高價值物品",
         "quality": "red",
         "price": 1850000,
-        "history":,
+        "updatedAt": "預設初始資料",
+        "history": [{"time": "預設初始資料", "price": 1850000}],
         "predictedPrice": 1850000,
         "predictedRate": 0.0,
     },
@@ -21,7 +29,8 @@ DEFAULT_ITEMS = {
         "category": "高價值物品",
         "quality": "red",
         "price": 62000000,
-        "history":,
+        "updatedAt": "預設初始資料",
+        "history": [{"time": "預設初始資料", "price": 62000000}],
         "predictedPrice": 62000000,
         "predictedRate": 0.0,
     },
@@ -30,7 +39,8 @@ DEFAULT_ITEMS = {
         "category": "高價值物品",
         "quality": "red",
         "price": 3500000,
-        "history":,
+        "updatedAt": "預設初始資料",
+        "history": [{"time": "預設初始資料", "price": 3500000}],
         "predictedPrice": 3500000,
         "predictedRate": 0.0,
     },
@@ -39,7 +49,8 @@ DEFAULT_ITEMS = {
         "category": "護甲裝備",
         "quality": "purple",
         "price": 450000,
-        "history":,
+        "updatedAt": "預設初始資料",
+        "history": [{"time": "預設初始資料", "price": 450000}],
         "predictedPrice": 450000,
         "predictedRate": 0.0,
     },
@@ -48,7 +59,8 @@ DEFAULT_ITEMS = {
         "category": "護甲裝備",
         "quality": "purple",
         "price": 380000,
-        "history":,
+        "updatedAt": "預設初始資料",
+        "history": [{"time": "預設初始資料", "price": 380000}],
         "predictedPrice": 380000,
         "predictedRate": 0.0,
     },
@@ -57,13 +69,13 @@ DEFAULT_ITEMS = {
         "category": "武器配件",
         "quality": "blue",
         "price": 85000,
-        "history":,
+        "updatedAt": "預設初始資料",
+        "history": [{"time": "預設初始資料", "price": 85000}],
         "predictedPrice": 85000,
         "predictedRate": 0.0,
     },
 }
 
-# 自動對應網站分類到你原本的分類名稱
 CATEGORY_MAP = {
     "COLLECTIBLES": "高價值物品",
     "KEYCARDS": "門禁卡",
@@ -92,16 +104,25 @@ def parse_price(price_str):
     digits = re.sub(r"[^\d.]", "", s)
     return float(digits) if digits else 0.0
 
+def normalize_history(raw_history):
+    """將舊版的純數字 history [1850000] 自動無痛轉成 [{"time": "...", "price": 1850000}]"""
+    normalized = []
+    for entry in raw_history:
+        if isinstance(entry, dict) and "price" in entry:
+            normalized.append(entry)
+        elif isinstance(entry, (int, float)):
+            normalized.append({"time": "早期歷史紀錄", "price": entry})
+    return normalized
+
 def fetch_auction_data():
     fetched_items = {}
-    base_url = "https://deltaforcetools.gg/tw/auction-house"
+    base_url = "https://deltaforcetools.gg"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
         "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8"
     }
 
     try:
-        # 先抓取第 1 頁並自動偵測總頁數（目前約 52 頁）
         resp = requests.get(f"{base_url}?page=1", headers=headers, timeout=15)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
@@ -110,7 +131,7 @@ def fetch_auction_data():
         for a in soup.find_all("a", href=True):
             if "page=" in a["href"]:
                 try:
-                    p = int(a["href"].split("page=").split("&"))
+                    p = int(a["href"].split("page=")[1].split("&")[0])
                     if p > max_page:
                         max_page = p
                 except ValueError:
@@ -119,10 +140,9 @@ def fetch_auction_data():
 
         for page_num in range(1, max_page + 1):
             if page_num > 1:
-                time.sleep(0.5)  # 禮貌性延遲，防止被鎖 IP
+                time.sleep(0.5)
                 resp = requests.get(f"{base_url}?page={page_num}", headers=headers, timeout=15)
                 if resp.status_code != 200:
-                    print(f"第 {page_num} 頁狀態碼異常: {resp.status_code}")
                     continue
                 soup = BeautifulSoup(resp.text, "html.parser")
 
@@ -135,14 +155,13 @@ def fetch_auction_data():
                 if len(cols) < 8:
                     continue
 
-                # 精準對應表格欄位：cols=物品名稱, cols=目前價格, cols=英文分類
-                raw_name = cols.get_text(strip=True)
+                raw_name = cols[1].get_text(strip=True)
                 clean_name = re.sub(r"\s+", " ", raw_name).strip()
                 if not clean_name:
                     continue
 
-                price = parse_price(cols.get_text())
-                raw_cat = cols.get_text(strip=True).upper()
+                price = parse_price(cols[2].get_text())
+                raw_cat = cols[7].get_text(strip=True).upper()
                 category = CATEGORY_MAP.get(raw_cat, "交易所物資")
 
                 if price > 0:
@@ -163,30 +182,32 @@ def fetch_auction_data():
 def update_dataset():
     data_file = "data.json"
     existing_data = {}
+    current_time = get_now_str()
 
-    # 1. 讀取你原本的 data.json（完整保留所有歷史價格與舊物資）
+    # 1. 讀取舊資料並自動升級 history 格式
     if os.path.exists(data_file):
         try:
             with open(data_file, "r", encoding="utf-8") as f:
                 content = f.read().strip()
                 if content:
                     existing_data = json.loads(content)
+                    for item_name, item_val in existing_data.items():
+                        item_val["history"] = normalize_history(item_val.get("history", []))
         except Exception as e:
             print(f"舊資料讀取失敗，將使用預設初始化: {e}")
 
     if not existing_data:
         existing_data = DEFAULT_ITEMS.copy()
 
-    # 2. 爬取最新全站數據
+    # 2. 爬取最新數據並寫入精準時間戳記
     new_items = fetch_auction_data()
 
     if new_items:
-        print(f"成功爬取到 {len(new_items)} 筆即時物資數據！")
+        print(f"[{current_time}] 成功爬取到 {len(new_items)} 筆即時物資數據！")
         for item in new_items:
             name = item["name"]
             price = item["price"]
 
-            # 保留你原本的特殊高級物資防錯機制
             if "海洋之淚" in name and price < 10000000:
                 price = 62000000
 
@@ -198,12 +219,21 @@ def update_dataset():
             elif price < 100_000:
                 quality = "blue"
 
+            new_record = {"time": current_time, "price": price}
+
             if name in existing_data:
-                # 保留原本的歷史陣列，把新價格加在最後面
-                existing_data[name]["history"].append(price)
-                if len(existing_data[name]["history"]) > 30:  # 幫你從 20 筆放寬到保留最近 30 筆歷史紀錄
-                    existing_data[name]["history"].pop(0)
+                history = existing_data[name]["history"]
+                # 若同一分鐘內重複執行則更新該筆，否則新增一筆帶時間的紀錄
+                if history and history[-1]["time"] == current_time:
+                    history[-1]["price"] = price
+                else:
+                    history.append(new_record)
+
+                if len(history) > 50:  # 保留最近 50 個時間點的紀錄
+                    history.pop(0)
+
                 existing_data[name]["price"] = price
+                existing_data[name]["updatedAt"] = current_time
                 existing_data[name]["quality"] = quality
                 if item["category"] != "交易所物資":
                     existing_data[name]["category"] = item["category"]
@@ -213,16 +243,17 @@ def update_dataset():
                     "category": item["category"],
                     "quality": quality,
                     "price": price,
-                    "history": [price],
+                    "updatedAt": current_time,
+                    "history": [new_record],
                 }
 
-            # 完整保留你原本的 AI 加權漲幅預測公式
-            history = existing_data[name]["history"]
-            if len(history) >= 2:
+            # 3. 取出純價格陣列計算 AI 加權預測
+            price_series = [h["price"] for h in existing_data[name]["history"]]
+            if len(price_series) >= 2:
                 diffs = [
-                    (history[i] - history[i - 1]) / history[i - 1]
-                    for i in range(1, len(history))
-                    if history[i - 1] > 0
+                    (price_series[i] - price_series[i - 1]) / price_series[i - 1]
+                    for i in range(1, len(price_series))
+                    if price_series[i - 1] > 0
                 ]
                 if diffs:
                     weights = [i + 1 for i in range(len(diffs))]
@@ -239,13 +270,13 @@ def update_dataset():
             existing_data[name]["predictedPrice"] = predicted_price
             existing_data[name]["predictedRate"] = predicted_rate
     else:
-        print("【提示】線上爬取未獲取到資料，維持現有物資庫。")
+        print(f"[{current_time}] 【提示】線上爬取未獲取到資料，維持現有物資庫。")
 
-    # 3. 寫回你原本的 data.json
+    # 4. 寫回 data.json
     with open(data_file, "w", encoding="utf-8") as f:
         json.dump(existing_data, f, ensure_ascii=False, indent=2)
 
-    print(f"寫入完成！目前 data.json 共有 {len(existing_data)} 筆完整物資數據。")
+    print(f"[{current_time}] 寫入完成！目前 data.json 共有 {len(existing_data)} 筆完整物資數據。")
 
 if __name__ == "__main__":
     update_dataset()
