@@ -53,10 +53,7 @@ def run():
     db = {}
     if os.path.exists("data.json"):
         try:
-            raw = json.load(open("data.json", encoding="utf-8"))
-            for k, v in raw.items():
-                v["history"] = [h if isinstance(h, dict) else {"time": "早期紀錄", "price": h} for h in v.get("history", [])]
-                db[k] = v
+            db = json.load(open("data.json", encoding="utf-8"))
         except Exception: pass
 
     for item in fetch_all():
@@ -65,23 +62,28 @@ def run():
         q = "red" if price >= 10_000_000 else "purple" if price >= 1_000_000 else "blue" if price < 100_000 else "gold"
         rec = {"time": now, "price": price}
 
-        if name in db:
-            h = db[name]["history"]
+        if name in db and isinstance(db[name].get("history"), list):
+            h = [x if isinstance(x, dict) else {"time": "早期紀錄", "price": x} for x in db[name]["history"]]
             if h and h[-1]["time"] == now: h[-1]["price"] = price
             else: h.append(rec)
             if len(h) > 30: h.pop(0)
-            db[name].update({"price": price, "quality": q, "category": item["category"]})
         else:
-            db[name] = {"name": name, "category": item["category"], "quality": q, "price": price, "history": [rec]}
+            h = [rec]
 
-        ps = [x["price"] for x in db[name]["history"]]
+        ps = [x["price"] for x in h]
         if len(ps) >= 2:
             diffs = [(ps[i] - ps[i-1]) / ps[i-1] for i in range(1, len(ps)) if ps[i-1] > 0]
             w = [i + 1 for i in range(len(diffs))]
             rate = sum(d * wt for d, wt in zip(diffs, w)) / sum(w) if diffs else 0.0
-            db[name]["predictedPrice"], db[name]["predictedRate"] = round(price * (1 + rate)), round(rate * 100, 1)
+            pred_p, pred_r = round(price * (1 + rate)), round(rate * 100, 1)
         else:
-            db[name]["predictedPrice"], db[name]["predictedRate"] = price, 0.0
+            pred_p, pred_r = price, 0.0
+
+        db[name] = {
+            "name": name, "category": item["category"], "quality": q,
+            "price": price, "updatedAt": now, "history": h,
+            "predictedPrice": pred_p, "predictedRate": pred_r
+        }
 
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(db, f, ensure_ascii=False, indent=2)
