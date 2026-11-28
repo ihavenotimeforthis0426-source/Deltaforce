@@ -9,8 +9,6 @@ CAT_MAP = {
     "CONSUMABLES": "消耗品", "PROVISIONS": "消耗品", "MEDICAL": "消耗品"
 }
 
-def has_cyrillic(t): return bool(re.search(r'[\u0400-\u04FF]', t))
-
 def parse_price(s):
     s = str(s or "").replace(",", "").strip().upper()
     for k, m in [("M", 1_000_000), ("萬", 10_000), ("K", 1_000)]:
@@ -38,7 +36,7 @@ def fetch_all():
                 cols = row.find_all("td")
                 if len(cols) < 8: continue
                 name = re.sub(r"\s+", " ", cols.get_text(strip=True)).strip()
-                if not name or has_cyrillic(name): continue
+                if not name: continue
                 price = parse_price(cols.get_text())
                 if price > 0:
                     items[name] = {
@@ -57,9 +55,8 @@ def run():
         try:
             raw = json.load(open("data.json", encoding="utf-8"))
             for k, v in raw.items():
-                if not has_cyrillic(k):
-                    v["history"] = [h if isinstance(h, dict) else {"time": "早期紀錄", "price": x if isinstance(x := h, (int, float)) else 0} for h in v.get("history", [])]
-                    db[k] = v
+                v["history"] = [h if isinstance(h, dict) else {"time": "早期紀錄", "price": h} for h in v.get("history", [])]
+                db[k] = v
         except Exception: pass
 
     for item in fetch_all():
