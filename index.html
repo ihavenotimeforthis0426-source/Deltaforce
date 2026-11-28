@@ -111,7 +111,7 @@
         const res = await fetch(`./data.json?t=${Date.now()}`);
         if (!res.ok) throw new Error("找不到 data.json");
         allMarketItems = await res.json();
-        const items = Object.values(allMarketItems).filter(i => !/[\u0400-\u04FF]/.test(i.name || ''));
+        const items = Object.values(allMarketItems);
         if (items.length === 0) { statusEl.innerText = "data.json 暫無物資資料"; return; }
         statusEl.innerText = `最後更新時間：${new Date().toLocaleTimeString()} (共 ${items.length} 筆物資)`;
         renderGrid();
@@ -128,7 +128,7 @@
       const gridEl = document.getElementById('market-grid');
       gridEl.innerHTML = '';
       const items = Object.values(allMarketItems)
-        .filter(item => !/[\u0400-\u04FF]/.test(item.name || '') && (currentFilter === '全部' || inferCategory(item) === currentFilter))
+        .filter(item => currentFilter === '全部' || inferCategory(item) === currentFilter)
         .sort((a, b) => (b.price || 0) - (a.price || 0));
 
       items.forEach(item => {
@@ -168,7 +168,7 @@
       document.getElementById('modal-predicted').innerHTML = `AI 預測價格: $ ${predPrice.toLocaleString()} (${rateHtml})`;
 
       const history = Array.isArray(item.history) ? item.history : [];
-      const labels = history.map((h, i) => (typeof h === 'object' && h && h.time) ? h.time : `早期紀錄 ${i + 1}`);
+      const labels = history.map((h, i) => (typeof h === 'object' && h && h.time) ? h.time : `紀錄 ${i + 1}`);
       const values = history.map(h => (typeof h === 'object' && h !== null) ? Number(h.price) : Number(h));
       const lineColor = predRate < 0 ? '#00ff88' : '#ff4d4d';
 
